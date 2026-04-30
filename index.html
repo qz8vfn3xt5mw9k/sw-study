@@ -585,7 +585,7 @@ function sendTodayReport(){
   }).join('\n');
   if(!tasks.length) msg+='\n今天是休息日，沒有安排任務。';
   msg+='\n\n請幫我看看今天的完成情況，有需要補課或調整明天計畫的地方嗎？';
-  sendPrompt(msg);
+  navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
 }
 
 // ── Tracker (rounds) ──
@@ -818,7 +818,8 @@ function sendWeeklyReport(){
     return `${s.name}：${watched}/${s.total} 堂（最多 ${maxR} 輪）`;
   });
   const totalWatched=SUBJECTS.reduce((a,s)=>a+getLessonsWatched(s.id),0);
-  sendPrompt(`本週讀書進度回報：\n${lines.join('\n')}\n\n整體：${totalWatched}/${TOTAL_LESSONS} 堂（${Math.round(totalWatched/TOTAL_LESSONS*100)}%）\n請幫我看看進度是否跟上計畫，有需要調整嗎？`);
+  const msg=`本週讀書進度回報：\n${lines.join('\n')}\n\n整體：${totalWatched}/${TOTAL_LESSONS} 堂（${Math.round(totalWatched/TOTAL_LESSONS*100)}%）\n請幫我看看進度是否跟上計畫，有需要調整嗎？`;
+  navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
 }
 
 // ── Sidebar ──

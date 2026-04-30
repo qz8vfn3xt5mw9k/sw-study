@@ -408,20 +408,17 @@ async function gasSet(key,value){
 }
 
 async function loadState(){
-  // show loading
-  document.getElementById('section-today').innerHTML='<div style="padding:40px;text-align:center;color:var(--ink-3);font-size:13px;">載入中...</div>';
+  // show loading indicator in subtitle only
+  const subtitle=document.getElementById('today-subtitle');
+  if(subtitle) subtitle.textContent='載入中...';
   try{
     const r=await gasGet('sw_rounds_2025'); if(r) rounds=r;
     const t=await gasGet('sw_today_tasks'); if(t) todayTasks=t;
     const d=await gasGet('sw_day_status'); if(d) dayStatus=d;
   }catch(e){}
   SUBJECTS.forEach(s=>{if(!rounds[s.id]) rounds[s.id]={};});
-  // re-render after load
-  document.getElementById('section-today').innerHTML='';
   renderToday();
   renderTracker();
-  renderDaily();
-  renderPlan();
   renderCalendar();
 }
 

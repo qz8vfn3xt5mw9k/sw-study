@@ -456,6 +456,12 @@ function showSection(id){
 }
 
 // ── Today Tasks ──
+function getYesterdayKey(){
+  const d=new Date();
+  d.setDate(d.getDate()-1);
+  return dateKey(d);
+}
+
 function getTodayTasks(){
   const key=todayKey();
   if(!todayTasks[key]){
@@ -464,11 +470,23 @@ function getTodayTasks(){
     const lessonMap=DAILY_LESSON_COUNT[phase][dow]||{};
     const tasks=[];
     let id=1;
+
+    // Add yesterday review task if yesterday had completed lessons
+    const yKey=getYesterdayKey();
+    const yTasks=todayTasks[yKey]||[];
+    const yDone=yTasks.filter(t=>t.done&&t.subj&&t.lessonNum);
+    if(yDone.length>0){
+      const yDesc=yDone.map(t=>{
+        const s=getSubject(t.subj);
+        return `${s?s.name:''}第${t.lessonNum}堂`;
+      }).join('、');
+      tasks.push({id:id++,subj:null,lessonNum:null,text:`複習昨天筆記：${yDesc}`,done:false,isReview:true});
+    }
+
     Object.entries(lessonMap).forEach(([subjId,count])=>{
       for(let i=0;i<count;i++){
         const nextLesson=getNextLesson(subjId);
         const s=getSubject(subjId);
-        // If all done, we're in review round
         const allWatched=getLessonsWatched(subjId)>=(s?s.total:0);
         const lessonNum=allWatched?getNextReviewLesson(subjId,i):nextLesson+i;
         tasks.push({id:id++,subj:subjId,lessonNum:Math.min(lessonNum,s?s.total:lessonNum),done:false});

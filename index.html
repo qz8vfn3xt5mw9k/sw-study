@@ -364,7 +364,12 @@ let activeDayTab=new Date().getDay();
 let calYear=new Date().getFullYear();
 let calMonth=new Date().getMonth();
 
-function dateKey(d){return d.toISOString().slice(0,10);}
+function dateKey(d){
+  const y=d.getFullYear();
+  const m=String(d.getMonth()+1).padStart(2,'0');
+  const day=String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
 function todayKey(){return dateKey(new Date());}
 function getSubject(id){return SUBJECTS.find(s=>s.id===id);}
 

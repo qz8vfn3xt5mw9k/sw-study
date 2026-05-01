@@ -424,11 +424,6 @@ async function loadState(){
 
 function saveRounds(){gasSet('sw_rounds_2025',rounds);}
 function saveTasks(){
-  // only keep today and past, remove future dates
-  const today=todayKey();
-  const filtered={};
-  Object.keys(todayTasks).forEach(k=>{ if(k<=today) filtered[k]=todayTasks[k]; });
-  todayTasks=filtered;
   gasSet('sw_today_tasks',todayTasks);
   gasSet('sw_day_status',dayStatus);
 }
@@ -533,7 +528,7 @@ function renderToday(){
   else if(allDone) dayStatus[key]='done';
   else if(partial) dayStatus[key]='partial';
   else dayStatus[key]='missed';
-  saveTasks();
+  // don't call saveTasks here — only save when data actually changes
 }
 
 function toggleTask(key,idx){
@@ -553,6 +548,8 @@ function toggleTask(key,idx){
   }
   saveTasks();
   renderToday();
+  // save dayStatus after render updates it
+  gasSet('sw_day_status',dayStatus);
   renderStats();
 }
 

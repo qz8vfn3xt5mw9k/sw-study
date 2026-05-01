@@ -423,7 +423,15 @@ async function loadState(){
 }
 
 function saveRounds(){gasSet('sw_rounds_2025',rounds);}
-function saveTasks(){gasSet('sw_today_tasks',todayTasks);gasSet('sw_day_status',dayStatus);}
+function saveTasks(){
+  // only keep today and past, remove future dates
+  const today=todayKey();
+  const filtered={};
+  Object.keys(todayTasks).forEach(k=>{ if(k<=today) filtered[k]=todayTasks[k]; });
+  todayTasks=filtered;
+  gasSet('sw_today_tasks',todayTasks);
+  gasSet('sw_day_status',dayStatus);
+}
 
 function showSection(id){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));

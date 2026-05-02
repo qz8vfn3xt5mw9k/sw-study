@@ -7,17 +7,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1c1917;--ink-2:#44403c;--ink-3:#78716c;--ink-4:#a8a29e;
-  --bg:#fafaf9;--bg-2:#f5f5f4;--bg-3:#e7e5e4;
-  --border:#e7e5e4;--border-2:#d6d3d1;--white:#ffffff;
-  --purple:#7c3aed;--purple-bg:#ede9fe;--purple-text:#5b21b6;
-  --blue:#1d4ed8;--blue-bg:#dbeafe;--blue-text:#1e40af;
-  --teal:#0d9488;--teal-bg:#ccfbf1;--teal-text:#115e59;
-  --amber:#b45309;--amber-bg:#fef3c7;--amber-text:#92400e;
-  --green:#16a34a;--green-bg:#dcfce7;--green-text:#14532d;
-  --red:#dc2626;--red-bg:#fee2e2;--red-text:#991b1b;
-  --serif:'Noto Serif TC',serif;--sans:'Noto Sans TC',sans-serif;
-  --radius:8px;--radius-lg:12px;
+--ink:#1c1917;--ink-2:#44403c;--ink-3:#78716c;--ink-4:#a8a29e;
+--bg:#fafaf9;--bg-2:#f5f5f4;--bg-3:#e7e5e4;
+--border:#e7e5e4;--border-2:#d6d3d1;--white:#ffffff;
+--purple:#7c3aed;--purple-bg:#ede9fe;--purple-text:#5b21b6;
+--blue:#1d4ed8;--blue-bg:#dbeafe;--blue-text:#1e40af;
+--teal:#0d9488;--teal-bg:#ccfbf1;--teal-text:#115e59;
+--amber:#b45309;--amber-bg:#fef3c7;--amber-text:#92400e;
+--green:#16a34a;--green-bg:#dcfce7;--green-text:#14532d;
+--red:#dc2626;--red-bg:#fee2e2;--red-text:#991b1b;
+--serif:'Noto Serif TC',serif;--sans:'Noto Sans TC',sans-serif;
+--radius:8px;--radius-lg:12px;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14px;line-height:1.6;}
@@ -39,15 +39,11 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .page-sub{font-size:13px;color:var(--ink-3);margin-bottom:24px;}
 .card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px 22px;margin-bottom:14px;}
 .card-title{font-size:11px;font-weight:500;letter-spacing:0.1em;color:var(--ink-3);margin-bottom:14px;text-transform:uppercase;}
-
-/* Stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;}
 .stat-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;}
 .stat-label{font-size:11px;color:var(--ink-3);margin-bottom:4px;}
 .stat-val{font-size:22px;font-weight:500;}
 .stat-unit{font-size:12px;color:var(--ink-3);margin-left:2px;}
-
-/* Tracker - rounds based */
 .subj-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;overflow:hidden;}
 .subj-head{display:flex;align-items:center;gap:12px;padding:13px 18px;cursor:pointer;user-select:none;transition:background 0.1s;}
 .subj-head:hover{background:var(--bg-2);}
@@ -62,7 +58,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .lessons-wrap{padding:6px 18px 14px;border-top:1px solid var(--border);}
 .lessons-hint{font-size:11px;color:var(--ink-3);margin-bottom:8px;}
 .lessons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:5px;}
-/* Round button: shows lesson number + round count */
 .round-btn{height:38px;border-radius:var(--radius);border:1px solid var(--border-2);background:var(--white);color:var(--ink-3);font-size:10px;cursor:pointer;transition:all 0.12s;font-family:var(--sans);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;position:relative;}
 .round-btn:hover{background:var(--bg-2);}
 .round-btn .lesson-num{font-size:11px;font-weight:500;}
@@ -73,8 +68,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .rounds-legend{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap;}
 .rl{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-3);}
 .rl-dot{width:10px;height:10px;border-radius:3px;}
-
-/* Today tasks */
 .today-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
 .today-status{font-size:12px;padding:4px 12px;border-radius:20px;}
 .task-item{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:8px;transition:opacity 0.2s;}
@@ -94,8 +87,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .add-task-btn:hover{opacity:0.85;}
 .today-report-btn{display:flex;align-items:center;gap:8px;padding:11px 18px;background:var(--ink);color:var(--white);border:none;border-radius:var(--radius-lg);font-size:13px;cursor:pointer;font-family:var(--sans);margin-top:16px;transition:opacity 0.15s;}
 .today-report-btn:hover{opacity:0.85;}
-
-/* Calendar + Monthly merged */
 .cal-nav{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
 .cal-nav-btn{padding:6px 14px;border-radius:var(--radius);border:1px solid var(--border-2);background:var(--white);color:var(--ink-2);font-size:13px;cursor:pointer;font-family:var(--sans);}
 .cal-nav-btn:hover{background:var(--bg-2);}
@@ -112,8 +103,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .cal-dot{width:5px;height:5px;border-radius:50%;}
 .cal-legend{display:flex;gap:16px;margin-bottom:14px;flex-wrap:wrap;}
 .cal-leg{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--ink-3);}
-
-/* Monthly plan block below calendar */
 .month-plan-block{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-top:4px;}
 .month-plan-head{padding:12px 18px;background:var(--bg-2);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
 .month-plan-title{font-family:var(--serif);font-size:15px;font-weight:700;}
@@ -127,8 +116,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .target-ongoing{color:var(--blue-text);}
 .subject-pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;}
 .pill-dot{width:7px;height:7px;border-radius:2px;flex-shrink:0;}
-
-/* Daily schedule */
 .day-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;}
 .day-tab{padding:7px 14px;border-radius:20px;font-size:12px;cursor:pointer;border:1px solid var(--border-2);color:var(--ink-2);background:var(--white);transition:all 0.15s;font-family:var(--sans);}
 .day-tab:hover{background:var(--bg-2);}
@@ -144,8 +131,6 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .sched-row{display:flex;gap:8px;font-size:12px;color:var(--ink-2);padding:4px 0;}
 .sched-row::before{content:'—';color:var(--ink-4);flex-shrink:0;}
 .phase-note{font-size:11px;color:var(--ink-3);padding:9px 18px;background:var(--bg-2);border-top:1px solid var(--border);}
-
-/* Phase plan */
 .phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
 .phase-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;}
 .phase-num{font-size:10px;letter-spacing:0.1em;color:var(--ink-3);margin-bottom:6px;font-weight:500;}
@@ -160,116 +145,115 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 .report-btn:hover{opacity:0.85;}
 .notice{background:var(--amber-bg);border:1px solid #fcd34d;border-radius:var(--radius);padding:12px 16px;font-size:12px;color:var(--amber-text);margin-bottom:20px;line-height:1.7;}
 @media(max-width:700px){
-  .app{grid-template-columns:1fr;}
-  .sidebar{display:none;}
-  .main{padding:20px 16px;}
-  .stats{grid-template-columns:repeat(2,1fr);}
-  .phase-grid{grid-template-columns:1fr;}
+.app{grid-template-columns:1fr;}
+.sidebar{display:none;}
+.main{padding:20px 16px;}
+.stats{grid-template-columns:repeat(2,1fr);}
+.phase-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 <div class="app">
 <div class="sidebar">
-  <div class="sb-logo">
-    <h1>社工所備考<br>2026–2027</h1>
-    <p>考試目標：2027 年 2 月初</p>
-  </div>
-  <div class="sb-nav">
-    <div class="sb-section">主要功能</div>
-    <div class="nav-item active" onclick="showSection('today')"><div class="nav-dot" style="background:#e11d48;"></div>今日任務</div>
-    <div class="nav-item" onclick="showSection('tracker')"><div class="nav-dot" style="background:#7c3aed;"></div>進度追蹤</div>
-    <div class="nav-item" onclick="showSection('daily')"><div class="nav-dot" style="background:#0d9488;"></div>每日課表</div>
-    <div class="nav-item" onclick="showSection('calendar')"><div class="nav-dot" style="background:#0284c7;"></div>月曆與進度</div>
-    <div class="nav-item" onclick="showSection('plan')"><div class="nav-dot" style="background:#1d4ed8;"></div>讀書計畫</div>
-    <div class="sb-section">科目顏色</div>
-    <div style="padding:0 10px;" id="sb-subjects"></div>
-  </div>
+<div class="sb-logo">
+<h1>社工所備考<br>2026–2027</h1>
+<p>考試目標：2027 年 2 月初</p>
 </div>
-
+<div class="sb-nav">
+<div class="sb-section">主要功能</div>
+<div class="nav-item active" onclick="showSection('today')"><div class="nav-dot" style="background:#e11d48;"></div>今日任務</div>
+<div class="nav-item" onclick="showSection('tracker')"><div class="nav-dot" style="background:#7c3aed;"></div>進度追蹤</div>
+<div class="nav-item" onclick="showSection('daily')"><div class="nav-dot" style="background:#0d9488;"></div>每日課表</div>
+<div class="nav-item" onclick="showSection('calendar')"><div class="nav-dot" style="background:#0284c7;"></div>月曆與進度</div>
+<div class="nav-item" onclick="showSection('plan')"><div class="nav-dot" style="background:#1d4ed8;"></div>讀書計畫</div>
+<div class="sb-section">科目顏色</div>
+<div style="padding:0 10px;" id="sb-subjects"></div>
+</div>
+</div>
 <div class="main">
 
 <!-- 今日任務 -->
 <div id="section-today" class="section active">
-  <div id="upload-reminder" style="display:none;background:var(--amber-bg);border:1px solid #fcd34d;border-radius:var(--radius);padding:10px 16px;margin-bottom:16px;font-size:12px;color:var(--amber-text);">
-    📤 今天是定期更新日（週三／週日）！回報進度給 Claude，取得新版網頁後上傳到 GitHub。
-  </div>
-  <div class="today-header">
-    <div>
-      <div class="page-title" id="today-title"></div>
-      <div class="page-sub" style="margin-bottom:0;" id="today-subtitle"></div>
-    </div>
-    <div id="today-badge"></div>
-  </div>
-  <div id="today-tasks"></div>
-  <div class="add-task-row">
-    <select class="add-task-select" id="add-task-subj"><option value="">科目</option></select>
-    <input class="add-task-input" id="add-task-input" placeholder="加入額外任務，例如：複習筆記" />
-    <button class="add-task-btn" onclick="addTask()">加入</button>
-  </div>
-  <button class="today-report-btn" onclick="sendTodayReport()">
-    <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    回報今日完成狀況給 Claude
-  </button>
+<div id="upload-reminder" style="display:none;background:var(--amber-bg);border:1px solid #fcd34d;border-radius:var(--radius);padding:10px 16px;margin-bottom:16px;font-size:12px;color:var(--amber-text);">
+  📤 今天是定期更新日（週三／週日）！回報進度給 Claude，取得新版網頁後上傳到 GitHub。
+</div>
+<div class="today-header">
+<div>
+<div class="page-title" id="today-title"></div>
+<div class="page-sub" style="margin-bottom:0;" id="today-subtitle"></div>
+</div>
+<div id="today-badge"></div>
+</div>
+<div id="today-tasks"></div>
+<div class="add-task-row">
+<select class="add-task-select" id="add-task-subj"><option value="">科目</option></select>
+<input class="add-task-input" id="add-task-input" placeholder="加入額外任務，例如：複習筆記" />
+<button class="add-task-btn" onclick="addTask()">加入</button>
+</div>
+<button class="today-report-btn" onclick="sendTodayReport()">
+<svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+回報今日完成狀況給 Claude
+</button>
 </div>
 
 <!-- 進度追蹤 -->
 <div id="section-tracker" class="section">
-  <div class="page-title">進度追蹤</div>
-  <div class="page-sub">點一下 +1 輪，再點繼續累加。空白＝未看，數字顏色代表輪數。</div>
-  <div class="stats" id="stats-bar"></div>
-  <div id="tracker-container"></div>
-  <button class="report-btn" onclick="sendWeeklyReport()">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    回報本週進度給 Claude
-  </button>
+<div class="page-title">進度追蹤</div>
+<div class="page-sub">點一下 +1 輪，再點繼續累加。空白＝未看，數字顏色代表輪數。</div>
+<div class="stats" id="stats-bar"></div>
+<div id="tracker-container"></div>
+<button class="report-btn" onclick="sendWeeklyReport()">
+<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+回報本週進度給 Claude
+</button>
 </div>
 
 <!-- 每日課表 -->
 <div id="section-daily" class="section">
-  <div class="page-title">每日課表</div>
-  <div class="page-sub">根據備考階段與一週節奏規劃，點選星期查看當天安排。</div>
-  <div class="day-tabs" id="day-tabs"></div>
-  <div id="daily-content"></div>
+<div class="page-title">每日課表</div>
+<div class="page-sub">根據備考階段與一週節奏規劃，點選星期查看當天安排。</div>
+<div class="day-tabs" id="day-tabs"></div>
+<div id="daily-content"></div>
 </div>
 
-<!-- 月曆與逐月進度（合併） -->
+<!-- 月曆與逐月進度 -->
 <div id="section-calendar" class="section">
-  <div class="page-title">月曆與進度</div>
-  <div class="page-sub">打勾代表當天完成任務，下方顯示該月讀書計畫目標。</div>
-  <div class="cal-legend">
-    <div class="cal-leg"><span>✓</span> 全部完成</div>
-    <div class="cal-leg"><span style="color:var(--amber);">◑</span> 部分完成</div>
-    <div class="cal-leg"><span style="color:var(--red);">✗</span> 未完成</div>
-    <div class="cal-leg"><span style="color:var(--ink-4);">—</span> 無任務</div>
-  </div>
-  <div class="cal-nav">
-    <button class="cal-nav-btn" onclick="prevMonth()">← 上個月</button>
-    <div class="cal-month-title" id="cal-title"></div>
-    <button class="cal-nav-btn" onclick="nextMonth()">下個月 →</button>
-  </div>
-  <div class="cal-grid" id="cal-grid"></div>
-  <div id="month-plan-content"></div>
+<div class="page-title">月曆與進度</div>
+<div class="page-sub">打勾代表當天完成任務，下方顯示該月讀書計畫目標。</div>
+<div class="cal-legend">
+<div class="cal-leg"><span>✓</span> 全部完成</div>
+<div class="cal-leg"><span style="color:var(--amber);">◑</span> 部分完成</div>
+<div class="cal-leg"><span style="color:var(--red);">✗</span> 未完成</div>
+<div class="cal-leg"><span style="color:var(--ink-4);">—</span> 無任務</div>
+</div>
+<div class="cal-nav">
+<button class="cal-nav-btn" onclick="prevMonth()">← 上個月</button>
+<div class="cal-month-title" id="cal-title"></div>
+<button class="cal-nav-btn" onclick="nextMonth()">下個月 →</button>
+</div>
+<div class="cal-grid" id="cal-grid"></div>
+<div id="month-plan-content"></div>
 </div>
 
 <!-- 讀書計畫 -->
 <div id="section-plan" class="section">
-  <div class="page-title">三階段讀書計畫</div>
-  <div class="page-sub">從現在到 2027 年 2 月，分三個階段推進。</div>
-  <div class="notice">⚑ 7 月中下旬起回台灣上班（早班），每天讀書時間降至 1–1.5 小時，週末補強。模式切換請至「每日課表」調整。</div>
-  <div class="phase-grid" id="phase-grid"></div>
-  <div class="card">
-    <div class="card-title">各校考試科目對照</div>
-    <table class="month-table">
-      <thead><tr><th>學校</th><th>科目一</th><th>科目二</th></tr></thead>
-      <tbody>
-        <tr><td>臺大</td><td>社會工作研究方法（含社統）</td><td>社會工作（含直接＋間接服務）</td></tr>
-        <tr><td>政大</td><td>社會工作研究方法（含社統）</td><td>社會工作（含社會福利）</td></tr>
-        <tr><td>師大</td><td colspan="2">社會工作（含直接、間接服務與研究法）</td></tr>
-        <tr><td>北大</td><td>社會工作研究法（含社統）</td><td>社會工作（含直接＋間接服務）</td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="page-title">三階段讀書計畫</div>
+<div class="page-sub">從現在到 2027 年 2 月，分三個階段推進。</div>
+<div class="notice">⚑ 7 月中下旬起回台灣上班（早班），每天讀書時間降至 1–1.5 小時，週末補強。模式切換請至「每日課表」調整。</div>
+<div class="phase-grid" id="phase-grid"></div>
+<div class="card">
+<div class="card-title">各校考試科目對照</div>
+<table class="month-table">
+<thead><tr><th>學校</th><th>科目一</th><th>科目二</th></tr></thead>
+<tbody>
+<tr><td>臺大</td><td>社會工作研究方法（含社統）</td><td>社會工作（含直接＋間接服務）</td></tr>
+<tr><td>政大</td><td>社會工作研究方法（含社統）</td><td>社會工作（含社會福利）</td></tr>
+<tr><td>師大</td><td colspan="2">社會工作（含直接、間接服務與研究法）</td></tr>
+<tr><td>北大</td><td>社會工作研究法（含社統）</td><td>社會工作（含直接＋間接服務）</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 
 </div>
@@ -277,98 +261,95 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 
 <script>
 const SUBJECTS=[
-  {id:'stat',   name:'社會統計學',        total:12,color:'#5588CC',note:'時數估 18hr'},
-  {id:'mgmt',   name:'社會工作管理',       total:13,color:'#888780',note:'時數估 14hr'},
-  {id:'direct', name:'社工直接服務',       total:24,color:'#2BA080',note:'含總複習 4 堂'},
-  {id:'research',name:'社會研究法',        total:25,color:'#378ADD',note:'含總複習 6 堂'},
-  {id:'human',  name:'人類行為與社會環境', total:16,color:'#1D9E75',note:'總複習待釋出'},
-  {id:'policy', name:'社福政策與法規',     total:42,color:'#BA7517',note:'總複習待釋出'},
-  {id:'overview',name:'社會工作（概要）',  total:42,color:'#7F77DD',note:'含總複習 4 堂'},
+{id:'stat', name:'社會統計學', total:12,color:'#5588CC',note:'時數估 18hr'},
+{id:'mgmt', name:'社會工作管理', total:13,color:'#888780',note:'時數估 14hr'},
+{id:'direct', name:'社工直接服務', total:24,color:'#2BA080',note:'含總複習 4 堂'},
+{id:'research',name:'社會研究法', total:25,color:'#378ADD',note:'含總複習 6 堂'},
+{id:'human', name:'人類行為與社會環境', total:16,color:'#1D9E75',note:'總複習待釋出'},
+{id:'policy', name:'社福政策與法規', total:42,color:'#BA7517',note:'總複習待釋出'},
+{id:'overview',name:'社會工作（概要）', total:42,color:'#7F77DD',note:'含總複習 4 堂'},
 ];
+
 const TOTAL_LESSONS=SUBJECTS.reduce((a,s)=>a+s.total,0);
 const EXAM_DATE=new Date('2027-02-01');
 const DAYS=['一','二','三','四','五','六','日'];
 const MONTHS=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
 
-// Lessons per subject per day — used to auto-generate today tasks
-// 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat, 0=Sun
 const DAILY_LESSON_COUNT={
-  abroad:{
-    1:{stat:2,overview:1},
-    2:{mgmt:2,stat:1},
-    3:{direct:2,overview:1},
-    4:{stat:2,overview:1},
-    5:{direct:2,overview:1},
-    6:{research:2,policy:2},
-    0:{human:2,policy:2},
-  },
-  working:{
-    1:{policy:1,overview:1},
-    2:{direct:1,overview:1},
-    3:{research:1,human:1},
-    4:{policy:1,overview:1},
-    5:{research:1,overview:1},
-    6:{research:2,policy:1},
-    0:{human:1,overview:1,policy:1},
-  },
+abroad:{
+1:{stat:2,overview:1},
+2:{mgmt:2,stat:1},
+3:{direct:2,overview:1},
+4:{stat:2,overview:1},
+5:{direct:2,overview:1},
+6:{research:2,policy:2},
+0:{human:2,policy:2},
+},
+working:{
+1:{policy:1,overview:1},
+2:{direct:1,overview:1},
+3:{research:1,human:1},
+4:{policy:1,overview:1},
+5:{research:1,overview:1},
+6:{research:2,policy:1},
+0:{human:1,overview:1,policy:1},
+},
 };
 
 const DAILY_SCHEDULE={
-  abroad:{
-    1:[{subj:'stat',type:'影片＋教材',rows:['統計學 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    2:[{subj:'mgmt',type:'影片＋教材',rows:['管理 2 堂']},{subj:'stat',type:'影片＋教材',rows:['統計學 1 堂']}],
-    3:[{subj:'direct',type:'影片＋教材',rows:['直接服務 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    4:[{subj:'stat',type:'影片＋教材',rows:['統計學 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    5:[{subj:'direct',type:'影片＋教材',rows:['直接服務 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    6:[{subj:'research',type:'影片＋教材',rows:['研究法 2 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 2 堂']}],
-    0:[{subj:'human',type:'影片＋教材',rows:['人類行為 2 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 2 堂']}],
-  },
-  working:{
-    1:[{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    2:[{subj:'direct',type:'影片＋教材',rows:['直接服務 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    3:[{subj:'research',type:'影片＋教材',rows:['研究法 1 堂']},{subj:'human',type:'影片＋教材',rows:['人類行為 1 堂']}],
-    4:[{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    5:[{subj:'research',type:'影片＋教材',rows:['研究法 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
-    6:[{subj:'research',type:'影片＋教材',rows:['研究法 2 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']}],
-    0:[{subj:'human',type:'影片＋教材',rows:['人類行為 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']}],
-  }
+abroad:{
+1:[{subj:'stat',type:'影片＋教材',rows:['統計學 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+2:[{subj:'mgmt',type:'影片＋教材',rows:['管理 2 堂']},{subj:'stat',type:'影片＋教材',rows:['統計學 1 堂']}],
+3:[{subj:'direct',type:'影片＋教材',rows:['直接服務 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+4:[{subj:'stat',type:'影片＋教材',rows:['統計學 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+5:[{subj:'direct',type:'影片＋教材',rows:['直接服務 2 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+6:[{subj:'research',type:'影片＋教材',rows:['研究法 2 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 2 堂']}],
+0:[{subj:'human',type:'影片＋教材',rows:['人類行為 2 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 2 堂']}],
+},
+working:{
+1:[{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+2:[{subj:'direct',type:'影片＋教材',rows:['直接服務 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+3:[{subj:'research',type:'影片＋教材',rows:['研究法 1 堂']},{subj:'human',type:'影片＋教材',rows:['人類行為 1 堂']}],
+4:[{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+5:[{subj:'research',type:'影片＋教材',rows:['研究法 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']}],
+6:[{subj:'research',type:'影片＋教材',rows:['研究法 2 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']}],
+0:[{subj:'human',type:'影片＋教材',rows:['人類行為 1 堂']},{subj:'overview',type:'影片＋教材',rows:['概要 1 堂']},{subj:'policy',type:'影片＋教材',rows:['社福政策 1 堂']}],
+}
 };
 
 const PHASE_DATA=[
-  {num:'PHASE 01',name:'建立基礎',date:'2026 年 5 月 — 8 月',badge:'第一階段',badgeColor:'#dcfce7',badgeText:'#14532d',
-   items:['每天 2 小時：影片＋教材同步進行','5 月清掉統計學、社工管理兩科','6 月完成直接服務全部堂數','7 月完成研究法＋人類行為','7 月中下旬起回台灣上班，降為每天 1–1.5 小時','8 月推進社福政策前半、概要持續進行']},
-  {num:'PHASE 02',name:'強化整合',date:'2026 年 9 月 — 11 月',badge:'第二階段',badgeColor:'#dbeafe',badgeText:'#1e40af',
-   items:['9 月完成社福政策、概要全部堂數','開始刷歷屆試題，每週 1 份','整理四校高頻考點筆記','補看待釋出的總複習課程','11 月針對弱點重看對應影片']},
-  {num:'PHASE 03',name:'衝刺複習',date:'2026 年 12 月 — 2027 年 2 月',badge:'第三階段',badgeColor:'#fee2e2',badgeText:'#991b1b',
-   items:['每週安排一次模擬考（限時完整試卷）','每天睡前 15 分鐘快速翻閱筆記','1 月刷各校近 3 年試題','集中補強統計、研究法弱點','考前一週輕量複習，勿熬夜']},
+{num:'PHASE 01',name:'建立基礎',date:'2026 年 5 月 — 8 月',badge:'第一階段',badgeColor:'#dcfce7',badgeText:'#14532d',
+items:['每天 2 小時：影片＋教材同步進行','5 月清掉統計學、社工管理兩科','6 月完成直接服務全部堂數','7 月完成研究法＋人類行為','7 月中下旬起回台灣上班，降為每天 1–1.5 小時','8 月推進社福政策前半、概要持續進行']},
+{num:'PHASE 02',name:'強化整合',date:'2026 年 9 月 — 11 月',badge:'第二階段',badgeColor:'#dbeafe',badgeText:'#1e40af',
+items:['9 月完成社福政策、概要全部堂數','開始刷歷屆試題，每週 1 份','整理四校高頻考點筆記','補看待釋出的總複習課程','11 月針對弱點重看對應影片']},
+{num:'PHASE 03',name:'衝刺複習',date:'2026 年 12 月 — 2027 年 2 月',badge:'第三階段',badgeColor:'#fee2e2',badgeText:'#991b1b',
+items:['每週安排一次模擬考（限時完整試卷）','每天睡前 15 分鐘快速翻閱筆記','1 月刷各校近 3 年試題','集中補強統計、研究法弱點','考前一週輕量複習，勿熬夜']},
 ];
 
-// Monthly plan data — indexed by year-month string e.g. "2026-5"
 const MONTHLY_PLAN={
-  '2026-5':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'人在國外，每天 2 小時，趁自由時間多衝一點',
-   rows:[{subj:'stat',target:'12 堂（全部）',status:'done',statusText:'✓ 5月底完課'},{subj:'mgmt',target:'13 堂（全部）',status:'done',statusText:'✓ 5月底完課'},{subj:'overview',target:'約 10 堂（第 1–10）',status:'ongoing',statusText:'持續進行 →'}]},
-  '2026-6':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'月底 6/30 搭飛機回台灣，最後幾天調整節奏',
-   rows:[{subj:'direct',target:'24 堂（全部）',status:'done',statusText:'✓ 6月底完課'},{subj:'overview',target:'約 10 堂（第 11–20）',status:'ongoing',statusText:'持續進行 →'}]},
-  '2026-7':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'7月中下旬起開始上班（早班），每天降為 1–1.5 小時，週末補強',
-   rows:[{subj:'research',target:'25 堂（全部）',status:'done',statusText:'✓ 7月底完課'},{subj:'human',target:'16 堂（全部）',status:'done',statusText:'✓ 7月底完課'},{subj:'overview',target:'約 10 堂（第 21–30）',status:'ongoing',statusText:'持續進行 →'}]},
-  '2026-8':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'社福政策開始推進，概要接近收尾',
-   rows:[{subj:'policy',target:'約 21 堂（第 1–21）',status:'ongoing',statusText:'進行中 →'},{subj:'overview',target:'約 6 堂（第 31–36）',status:'ongoing',statusText:'持續進行 →'}]},
-  '2026-9':{phase:'第二階段',phaseColor:'#dbeafe',phaseText:'#1e40af',note:'課程＋刷題各半，開始做歷屆試題',
-   rows:[{subj:'policy',target:'約 21 堂（第 22–42）',status:'done',statusText:'✓ 9月底完課'},{subj:'overview',target:'6 堂（第 37–42，含總複習）',status:'done',statusText:'✓ 9月底完課'},{subj:null,target:'歷屆試題（臺大、北大）',status:'special',statusText:'每週 1 份'}]},
-  '2026-10':{phase:'第二階段',phaseColor:'#dbeafe',phaseText:'#1e40af',note:'刷題為主，整理高頻考點筆記',
-   rows:[{subj:null,target:'歷屆試題（政大、師大）',status:'special',statusText:'每週 1 份'},{subj:null,target:'高頻考點筆記整理',status:'special',statusText:'本月完成'},{subj:null,target:'待釋出總複習補看',status:'special',statusText:'釋出後補看'}]},
-  '2026-11':{phase:'第二階段',phaseColor:'#dbeafe',phaseText:'#1e40af',note:'弱點補強，整理全科架構筆記',
-   rows:[{subj:null,target:'弱點章節重看',status:'special',statusText:'依做題結果'},{subj:null,target:'各科一頁架構筆記',status:'special',statusText:'本月完成'}]},
-  '2026-12':{phase:'第三階段',phaseColor:'#fee2e2',phaseText:'#991b1b',note:'模擬考節奏，每週一次限時試卷',
-   rows:[{subj:null,target:'模擬考（輪流各校）',status:'special',statusText:'共 4 份'},{subj:null,target:'筆記快速瀏覽',status:'special',statusText:'每日睡前 15 分'}]},
-  '2027-1':{phase:'第三階段',phaseColor:'#fee2e2',phaseText:'#991b1b',note:'各校近 3 年試題，集中補強盲點',
-   rows:[{subj:null,target:'各校近 3 年試題',status:'special',statusText:'共 12 份'},{subj:null,target:'統計、研究法盲點補強',status:'special',statusText:'針對弱點'}]},
-  '2027-2':{phase:'考前',phaseColor:'#f3e8ff',phaseText:'#6b21a8',note:'輕量複習，保持狀態，勿熬夜',
-   rows:[{subj:null,target:'架構筆記瀏覽',status:'special',statusText:'每天 1 小時即可'}]},
+'2026-5':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'人在國外，每天 2 小時，趁自由時間多衝一點',
+rows:[{subj:'stat',target:'12 堂（全部）',status:'done',statusText:'✓ 5月底完課'},{subj:'mgmt',target:'13 堂（全部）',status:'done',statusText:'✓ 5月底完課'},{subj:'overview',target:'約 10 堂（第 1–10）',status:'ongoing',statusText:'持續進行 →'}]},
+'2026-6':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'月底 6/30 搭飛機回台灣，最後幾天調整節奏',
+rows:[{subj:'direct',target:'24 堂（全部）',status:'done',statusText:'✓ 6月底完課'},{subj:'overview',target:'約 10 堂（第 11–20）',status:'ongoing',statusText:'持續進行 →'}]},
+'2026-7':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'7月中下旬起開始上班（早班），每天降為 1–1.5 小時，週末補強',
+rows:[{subj:'research',target:'25 堂（全部）',status:'done',statusText:'✓ 7月底完課'},{subj:'human',target:'16 堂（全部）',status:'done',statusText:'✓ 7月底完課'},{subj:'overview',target:'約 10 堂（第 21–30）',status:'ongoing',statusText:'持續進行 →'}]},
+'2026-8':{phase:'第一階段',phaseColor:'#dcfce7',phaseText:'#14532d',note:'社福政策開始推進，概要接近收尾',
+rows:[{subj:'policy',target:'約 21 堂（第 1–21）',status:'ongoing',statusText:'進行中 →'},{subj:'overview',target:'約 6 堂（第 31–36）',status:'ongoing',statusText:'持續進行 →'}]},
+'2026-9':{phase:'第二階段',phaseColor:'#dbeafe',phaseText:'#1e40af',note:'課程＋刷題各半，開始做歷屆試題',
+rows:[{subj:'policy',target:'約 21 堂（第 22–42）',status:'done',statusText:'✓ 9月底完課'},{subj:'overview',target:'6 堂（第 37–42，含總複習）',status:'done',statusText:'✓ 9月底完課'},{subj:null,target:'歷屆試題（臺大、北大）',status:'special',statusText:'每週 1 份'}]},
+'2026-10':{phase:'第二階段',phaseColor:'#dbeafe',phaseText:'#1e40af',note:'刷題為主，整理高頻考點筆記',
+rows:[{subj:null,target:'歷屆試題（政大、師大）',status:'special',statusText:'每週 1 份'},{subj:null,target:'高頻考點筆記整理',status:'special',statusText:'本月完成'},{subj:null,target:'待釋出總複習補看',status:'special',statusText:'釋出後補看'}]},
+'2026-11':{phase:'第二階段',phaseColor:'#dbeafe',phaseText:'#1e40af',note:'弱點補強，整理全科架構筆記',
+rows:[{subj:null,target:'弱點章節重看',status:'special',statusText:'依做題結果'},{subj:null,target:'各科一頁架構筆記',status:'special',statusText:'本月完成'}]},
+'2026-12':{phase:'第三階段',phaseColor:'#fee2e2',phaseText:'#991b1b',note:'模擬考節奏，每週一次限時試卷',
+rows:[{subj:null,target:'模擬考（輪流各校）',status:'special',statusText:'共 4 份'},{subj:null,target:'筆記快速瀏覽',status:'special',statusText:'每日睡前 15 分'}]},
+'2027-1':{phase:'第三階段',phaseColor:'#fee2e2',phaseText:'#991b1b',note:'各校近 3 年試題，集中補強盲點',
+rows:[{subj:null,target:'各校近 3 年試題',status:'special',statusText:'共 12 份'},{subj:null,target:'統計、研究法盲點補強',status:'special',statusText:'針對弱點'}]},
+'2027-2':{phase:'考前',phaseColor:'#f3e8ff',phaseText:'#6b21a8',note:'輕量複習，保持狀態，勿熬夜',
+rows:[{subj:null,target:'架構筆記瀏覽',status:'special',statusText:'每天 1 小時即可'}]},
 };
 
 // ── State ──
-// rounds[subjId][lessonNum] = number of rounds watched (0/undefined = not watched)
 let rounds={};
 let todayTasks={};
 let dayStatus={};
@@ -379,404 +360,391 @@ let calYear=new Date().getFullYear();
 let calMonth=new Date().getMonth();
 
 function dateKey(d){
-  // Day changes at 5am, not midnight
-  const adjusted=new Date(d.getTime()-5*60*60*1000);
-  const y=adjusted.getFullYear();
-  const m=String(adjusted.getMonth()+1).padStart(2,'0');
-  const day=String(adjusted.getDate()).padStart(2,'0');
-  return `${y}-${m}-${day}`;
+const adjusted=new Date(d.getTime()-5*60*60*1000);
+const y=adjusted.getFullYear();
+const m=String(adjusted.getMonth()+1).padStart(2,'0');
+const day=String(adjusted.getDate()).padStart(2,'0');
+return `${y}-${m}-${day}`;
 }
 function todayKey(){return dateKey(new Date());}
 function getSubject(id){return SUBJECTS.find(s=>s.id===id);}
 
-// Get how many lessons of a subject have been watched at least once
 function getLessonsWatched(id){
-  if(!rounds[id]) return 0;
-  return Object.values(rounds[id]).filter(v=>v>0).length;
+if(!rounds[id]) return 0;
+return Object.values(rounds[id]).filter(v=>v>0).length;
 }
-// Get next unwatched lesson number for a subject
+
 function getNextLesson(id){
-  const s=getSubject(id);
-  if(!s) return 1;
-  for(let i=1;i<=s.total;i++){
-    if(!rounds[id]||!rounds[id][i]) return i;
-  }
-  // all watched — return first for review
-  return 1;
+const s=getSubject(id);
+if(!s) return 1;
+for(let i=1;i<=s.total;i++){
+if(!rounds[id]||!rounds[id][i]) return i;
+}
+return 1;
 }
 
 const GAS_URL='https://script.google.com/macros/s/AKfycbyaQ8_Q__KtIZB9h_OybpFwujIKWP3Vufmvq9iE__BKwY_moGg3uB0rXQf1x5WyLPe6/exec';
 
 async function gasGet(key){
-  try{
-    const res=await fetch(`${GAS_URL}?action=get&key=${key}`);
-    const text=await res.text();
-    return text&&text!=='{}'?JSON.parse(text):null;
-  }catch(e){
-    // fallback to localStorage
-    const v=localStorage.getItem(key);
-    return v?JSON.parse(v):null;
-  }
+try{
+const res=await fetch(`${GAS_URL}?action=get&key=${key}`);
+const text=await res.text();
+return text&&text!=='{}'?JSON.parse(text):null;
+}catch(e){
+const v=localStorage.getItem(key);
+return v?JSON.parse(v):null;
+}
 }
 
 async function gasSet(key,value){
-  const str=JSON.stringify(value);
-  // also save to localStorage as backup
-  try{localStorage.setItem(key,str);}catch(e){}
-  try{
-    await fetch(`${GAS_URL}?action=set&key=${key}&value=${encodeURIComponent(str)}`);
-  }catch(e){}
+const str=JSON.stringify(value);
+try{localStorage.setItem(key,str);}catch(e){}
+try{
+await fetch(`${GAS_URL}?action=set&key=${key}&value=${encodeURIComponent(str)}`);
+}catch(e){}
 }
 
 async function loadState(){
-  // show loading indicator in subtitle only
-  const subtitle=document.getElementById('today-subtitle');
-  if(subtitle) subtitle.textContent='載入中...';
-  try{
-    const r=await gasGet('sw_rounds_2025'); if(r) rounds=r;
-    const t=await gasGet('sw_today_tasks'); if(t) todayTasks=t;
-    const d=await gasGet('sw_day_status'); if(d) dayStatus=d;
-  }catch(e){}
-  SUBJECTS.forEach(s=>{if(!rounds[s.id]) rounds[s.id]={};});
-  renderToday();
-  renderTracker();
-  renderCalendar();
+const subtitle=document.getElementById('today-subtitle');
+if(subtitle) subtitle.textContent='載入中...';
+try{
+const r=await gasGet('sw_rounds_2025'); if(r) rounds=r;
+const t=await gasGet('sw_today_tasks'); if(t) todayTasks=t;
+const d=await gasGet('sw_day_status'); if(d) dayStatus=d;
+}catch(e){}
+SUBJECTS.forEach(s=>{if(!rounds[s.id]) rounds[s.id]={};});
+renderToday();
+renderTracker();
+renderCalendar();
 }
 
 function saveRounds(){gasSet('sw_rounds_2025',rounds);}
 function saveTasks(){
-  gasSet('sw_today_tasks',todayTasks);
-  gasSet('sw_day_status',dayStatus);
+gasSet('sw_today_tasks',todayTasks);
+gasSet('sw_day_status',dayStatus);
 }
 
 function showSection(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  document.getElementById('section-'+id).classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(n=>{
-    if(n.getAttribute('onclick')===`showSection('${id}')`) n.classList.add('active');
-  });
-  activeSection=id;
-  if(id==='calendar') renderCalendar();
+document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+document.getElementById('section-'+id).classList.add('active');
+document.querySelectorAll('.nav-item').forEach(n=>{
+if(n.getAttribute('onclick')===`showSection('${id}')`) n.classList.add('active');
+});
+activeSection=id;
+if(id==='calendar') renderCalendar();
 }
 
 // ── Today Tasks ──
 function getYesterdayKey(){
-  const d=new Date();
-  d.setDate(d.getDate()-1);
-  return dateKey(d);
+const d=new Date();
+d.setDate(d.getDate()-1);
+return dateKey(d);
 }
 
 function getTodayTasks(){
-  const key=todayKey();
-  if(!todayTasks[key]){
-    const phase=getCurrentPhase();
-    const dow=new Date().getDay();
-    const lessonMap=DAILY_LESSON_COUNT[phase][dow]||{};
-    const tasks=[];
-    let id=1;
+const key=todayKey();
+if(!todayTasks[key]){
+const phase=getCurrentPhase();
+const dow=new Date().getDay();
+const lessonMap=DAILY_LESSON_COUNT[phase][dow]||{};
+const tasks=[];
+let id=1;
 
-    // Add yesterday review task if yesterday had completed lessons
-    const yKey=getYesterdayKey();
-    const yTasks=todayTasks[yKey]||[];
-    const yDone=yTasks.filter(t=>t.done&&t.subj&&t.lessonNum);
-    if(yDone.length>0){
-      const yDesc=yDone.map(t=>{
-        const s=getSubject(t.subj);
-        return `${s?s.name:''}第${t.lessonNum}堂`;
-      }).join('、');
-      tasks.push({id:id++,subj:null,lessonNum:null,text:`複習昨天筆記：${yDesc}`,done:false,isReview:true});
-    }
+// 昨日複習任務
+const yKey=getYesterdayKey();
+const yTasks=todayTasks[yKey]||[];
+const yDone=yTasks.filter(t=>t.done&&t.subj&&t.lessonNum);
+if(yDone.length>0){
+const yDesc=yDone.map(t=>{
+const s=getSubject(t.subj);
+return `${s?s.name:''}第${t.lessonNum}堂`;
+}).join('、');
+tasks.push({id:id++,subj:null,lessonNum:null,text:`複習昨天筆記：${yDesc}`,done:false,isReview:true});
+}
 
-    Object.entries(lessonMap).forEach(([subjId,count])=>{
-      for(let i=0;i<count;i++){
-        const nextLesson=getNextLesson(subjId);
-        const s=getSubject(subjId);
-        const allWatched=getLessonsWatched(subjId)>=(s?s.total:0);
-        const lessonNum=allWatched?getNextReviewLesson(subjId,i):nextLesson+i;
-        tasks.push({id:id++,subj:subjId,lessonNum:Math.min(lessonNum,s?s.total:lessonNum),done:false});
-      }
-    });
-    todayTasks[key]=tasks;
-    saveTasks();
-  }
-  return todayTasks[key];
+// 一般課程任務
+Object.entries(lessonMap).forEach(([subjId,count])=>{
+for(let i=0;i<count;i++){
+const nextLesson=getNextLesson(subjId);
+const s=getSubject(subjId);
+const allWatched=getLessonsWatched(subjId)>=(s?s.total:0);
+const lessonNum=allWatched?getNextReviewLesson(subjId,i):nextLesson+i;
+tasks.push({id:id++,subj:subjId,lessonNum:Math.min(lessonNum,s?s.total:lessonNum),done:false});
+}
+});
+
+// ── 週三（3）或週日（0）自動加入「更新讀書網頁」任務 ──
+// 使用與 dateKey 相同的 5am 換日邏輯，確保深夜不誤判
+const taskDate=new Date(new Date().getTime()-5*60*60*1000);
+const taskDow=taskDate.getDay();
+if(taskDow===3||taskDow===0){
+tasks.push({id:id++,subj:null,lessonNum:null,text:'📤 更新讀書網頁',done:false,isWebUpdate:true});
+}
+
+todayTasks[key]=tasks;
+saveTasks();
+}
+return todayTasks[key];
 }
 
 function getNextReviewLesson(subjId,offset){
-  // For review rounds, cycle through lessons
-  const s=getSubject(subjId);
-  if(!s) return 1;
-  // Find lesson with fewest rounds
-  let minRounds=Infinity,minLesson=1;
-  for(let i=1;i<=s.total;i++){
-    const r=(rounds[subjId]&&rounds[subjId][i])||0;
-    if(r<minRounds){minRounds=r;minLesson=i;}
-  }
-  return minLesson+offset;
+const s=getSubject(subjId);
+if(!s) return 1;
+let minRounds=Infinity,minLesson=1;
+for(let i=1;i<=s.total;i++){
+const r=(rounds[subjId]&&rounds[subjId][i])||0;
+if(r<minRounds){minRounds=r;minLesson=i;}
+}
+return minLesson+offset;
 }
 
 function renderToday(){
-  const now=new Date();
-  const key=todayKey();
-  const weekdays=['日','一','二','三','四','五','六'];
-  const isLateNight=now.getHours()<5;
-  const dow=now.getDay();
+const now=new Date();
+const key=todayKey();
+const weekdays=['日','一','二','三','四','五','六'];
+const isLateNight=now.getHours()<5;
+const dow=now.getDay();
 
-  // Always show real date
-  document.getElementById('today-title').textContent=
-    `${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日（週${weekdays[dow]}）`;
+document.getElementById('today-title').textContent=
+`${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日（週${weekdays[dow]}）`;
 
-  // Show upload reminder on Wed (3) and Sun (0) based on task date
-  const taskDate=new Date(now.getTime()-5*60*60*1000);
-  const taskDow=taskDate.getDay();
-  const reminderEl=document.getElementById('upload-reminder');
-  if(reminderEl){
-    if(taskDow===3||taskDow===0){
-      reminderEl.style.display='block';
-    } else {
-      reminderEl.style.display='none';
-    }
-  }
+const taskDate=new Date(now.getTime()-5*60*60*1000);
+const taskDow=taskDate.getDay();
+const reminderEl=document.getElementById('upload-reminder');
+if(reminderEl){
+if(taskDow===3||taskDow===0){reminderEl.style.display='block';}
+else{reminderEl.style.display='none';}
+}
 
-  const tasks=getTodayTasks();
-  const total=tasks.length;
-  const done=tasks.filter(t=>t.done).length;
-  const allDone=total>0&&done===total;
-  const partial=done>0&&done<total;
+const tasks=getTodayTasks();
+const total=tasks.length;
+const done=tasks.filter(t=>t.done).length;
+const allDone=total>0&&done===total;
+const partial=done>0&&done<total;
 
-  // Build subtitle
-  let subtitleLines=[];
-  if(isLateNight){
-    subtitleLines.push('🌙 深夜中，沿用昨日任務');
-    if(allDone) subtitleLines.push('✅ 昨天任務已全部完成');
-    else subtitleLines.push('❌ 昨天任務尚未完成');
-  } else {
-    subtitleLines.push(total===0?'今天沒有預設任務，可以自己加入↓':`共 ${total} 個任務，已完成 ${done} 個`);
-  }
-  document.getElementById('today-subtitle').innerHTML=subtitleLines.map(l=>`<div>${l}</div>`).join('');
+let subtitleLines=[];
+if(isLateNight){
+subtitleLines.push('🌙 深夜中，沿用昨日任務');
+if(allDone) subtitleLines.push('✅ 昨天任務已全部完成');
+else subtitleLines.push('❌ 昨天任務尚未完成');
+} else {
+subtitleLines.push(total===0?'今天沒有預設任務，可以自己加入↓':`共 ${total} 個任務，已完成 ${done} 個`);
+}
+document.getElementById('today-subtitle').innerHTML=subtitleLines.map(l=>`<div>${l}</div>`).join('');
 
-  let badgeHtml='';
-  if(total===0) badgeHtml=`<span class="today-status" style="background:var(--bg-2);color:var(--ink-3);">休息日</span>`;
-  else if(allDone) badgeHtml=`<span class="today-status" style="background:var(--green-bg);color:var(--green-text);">全部完成 ✓</span>`;
-  else if(partial) badgeHtml=`<span class="today-status" style="background:var(--amber-bg);color:var(--amber-text);">進行中 ${done}/${total}</span>`;
-  else badgeHtml=`<span class="today-status" style="background:var(--bg-2);color:var(--ink-3);">尚未開始</span>`;
-  document.getElementById('today-badge').innerHTML=badgeHtml;
+let badgeHtml='';
+if(total===0) badgeHtml=`<span class="today-status" style="background:var(--bg-2);color:var(--ink-3);">休息日</span>`;
+else if(allDone) badgeHtml=`<span class="today-status" style="background:var(--green-bg);color:var(--green-text);">全部完成 ✓</span>`;
+else if(partial) badgeHtml=`<span class="today-status" style="background:var(--amber-bg);color:var(--amber-text);">進行中 ${done}/${total}</span>`;
+else badgeHtml=`<span class="today-status" style="background:var(--bg-2);color:var(--ink-3);">尚未開始</span>`;
+document.getElementById('today-badge').innerHTML=badgeHtml;
 
-  const el=document.getElementById('today-tasks');
-  if(tasks.length===0){
-    el.innerHTML=`<div class="card" style="text-align:center;color:var(--ink-3);font-size:13px;padding:24px;">今天沒有預設任務，在下方加入你今天想讀的內容吧！</div>`;
-  } else {
-    el.innerHTML=tasks.map((t,i)=>{
-      const s=t.subj?getSubject(t.subj):null;
-      const color=s?s.color:'#a8a29e';
-      const currentRound=t.subj&&t.lessonNum?(rounds[t.subj]&&rounds[t.subj][t.lessonNum])||0:0;
-      const roundLabel=currentRound>0?` （第 ${currentRound} 輪）`:'';
-      const desc=t.lessonNum?`第 ${t.lessonNum} 堂${roundLabel}`:(t.text||'');
-      const notes=t.notes||'';
-      const locked=t.done;
-      return `<div class="task-item${locked?' done-task':''}">
-        <div class="task-color-bar" style="background:${color};"></div>
-        <div class="task-check${locked?' checked':''}" style="${locked?`background:${color};pointer-events:none;`:''}" onclick="${locked?'':'toggleTask(\''+key+'\','+i+')'}">
-          ${locked?'<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}
-        </div>
-        <div class="task-body">
-          <div class="task-subject" style="${locked?'text-decoration:line-through;color:var(--ink-3);':''}">${s?s.name:'其他'}</div>
-          <div class="task-desc">${desc}</div>
-          <input type="text" placeholder="這堂心得（選填）…" value="${notes.replace(/"/g,'&quot;')}"
-            onchange="saveNotes('${key}',${i},this.value)"
-            style="margin-top:6px;width:100%;font-size:11px;padding:5px 8px;border:1px solid var(--border-2);border-radius:6px;font-family:var(--sans);background:var(--bg-2);color:var(--ink-2);outline:none;"
-            onclick="event.stopPropagation()" />
-        </div>
-        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
-          ${locked
-            ? `<button onclick="undoTask('${key}',${i})" title="撤回" style="border:none;background:var(--bg-2);color:var(--ink-3);cursor:pointer;font-size:11px;padding:4px 8px;border-radius:var(--radius);font-family:var(--sans);">↩ 撤回</button>`
-            : `<button onclick="removeTask('${key}',${i})" style="border:none;background:transparent;color:var(--ink-4);cursor:pointer;font-size:16px;padding:4px 8px;line-height:1;">×</button>`
-          }
-        </div>
-      </div>`;
-    }).join('');
-  }
+const el=document.getElementById('today-tasks');
+if(tasks.length===0){
+el.innerHTML=`<div class="card" style="text-align:center;color:var(--ink-3);font-size:13px;padding:24px;">今天沒有預設任務，在下方加入你今天想讀的內容吧！</div>`;
+} else {
+el.innerHTML=tasks.map((t,i)=>{
+const s=t.subj?getSubject(t.subj):null;
+// isWebUpdate 用藍紫色色條，isReview 用灰色，一般任務用科目色
+const color=s?s.color:(t.isWebUpdate?'#7c3aed':'#a8a29e');
+const currentRound=t.subj&&t.lessonNum?(rounds[t.subj]&&rounds[t.subj][t.lessonNum])||0:0;
+const roundLabel=currentRound>0?` （第 ${currentRound} 輪）`:'';
+const desc=t.lessonNum?`第 ${t.lessonNum} 堂${roundLabel}`:(t.text||'');
+const notes=t.notes||'';
+const locked=t.done;
+const subjLabel=s?s.name:(t.isWebUpdate?'定期更新':'其他');
+return `<div class="task-item${locked?' done-task':''}">
+<div class="task-color-bar" style="background:${color};"></div>
+<div class="task-check${locked?' checked':''}" style="${locked?`background:${color};pointer-events:none;`:''}" onclick="${locked?'':'toggleTask(\''+key+'\','+i+')'}">
+${locked?'<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}
+</div>
+<div class="task-body">
+<div class="task-subject" style="${locked?'text-decoration:line-through;color:var(--ink-3);':''}">${subjLabel}</div>
+<div class="task-desc">${desc}</div>
+<input type="text" placeholder="備注（選填）…" value="${notes.replace(/"/g,'&quot;')}"
+onchange="saveNotes('${key}',${i},this.value)"
+style="margin-top:6px;width:100%;font-size:11px;padding:5px 8px;border:1px solid var(--border-2);border-radius:6px;font-family:var(--sans);background:var(--bg-2);color:var(--ink-2);outline:none;"
+onclick="event.stopPropagation()" />
+</div>
+<div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
+${locked
+? `<button onclick="undoTask('${key}',${i})" title="撤回" style="border:none;background:var(--bg-2);color:var(--ink-3);cursor:pointer;font-size:11px;padding:4px 8px;border-radius:var(--radius);font-family:var(--sans);">↩ 撤回</button>`
+: `<button onclick="removeTask('${key}',${i})" style="border:none;background:transparent;color:var(--ink-4);cursor:pointer;font-size:16px;padding:4px 8px;line-height:1;">×</button>`
+}
+</div>
+</div>`;
+}).join('');
+}
 
-  if(total===0) dayStatus[key]='rest';
-  else if(allDone) dayStatus[key]='done';
-  else if(partial) dayStatus[key]='partial';
-  else dayStatus[key]='missed';
-  // don't call saveTasks here — only save when data actually changes
+if(total===0) dayStatus[key]='rest';
+else if(allDone) dayStatus[key]='done';
+else if(partial) dayStatus[key]='partial';
+else dayStatus[key]='missed';
 }
 
 function toggleTask(key,idx){
-  const task=todayTasks[key][idx];
-  task.done=!task.done;
-  // Sync to rounds tracker
-  if(task.subj&&task.lessonNum){
-    if(!rounds[task.subj]) rounds[task.subj]={};
-    if(task.done){
-      rounds[task.subj][task.lessonNum]=(rounds[task.subj][task.lessonNum]||0)+1;
-    } else {
-      // undo: decrement by 1 if > 0
-      if(rounds[task.subj][task.lessonNum]>0)
-        rounds[task.subj][task.lessonNum]--;
-    }
-    saveRounds();
-  }
-  saveTasks();
-  renderToday();
-  // save dayStatus after render updates it
-  gasSet('sw_day_status',dayStatus);
-  renderStats();
+const task=todayTasks[key][idx];
+task.done=!task.done;
+if(task.subj&&task.lessonNum){
+if(!rounds[task.subj]) rounds[task.subj]={};
+if(task.done){
+rounds[task.subj][task.lessonNum]=(rounds[task.subj][task.lessonNum]||0)+1;
+} else {
+if(rounds[task.subj][task.lessonNum]>0)
+rounds[task.subj][task.lessonNum]--;
+}
+saveRounds();
+}
+saveTasks();
+renderToday();
+gasSet('sw_day_status',dayStatus);
+renderStats();
 }
 
 function removeTask(key,idx){
-  todayTasks[key].splice(idx,1);
-  saveTasks();
-  renderToday();
+todayTasks[key].splice(idx,1);
+saveTasks();
+renderToday();
 }
 
 function undoTask(key,idx){
-  const task=todayTasks[key][idx];
-  task.done=false;
-  // undo round increment
-  if(task.subj&&task.lessonNum){
-    if(rounds[task.subj]&&rounds[task.subj][task.lessonNum]>0)
-      rounds[task.subj][task.lessonNum]--;
-    saveRounds();
-  }
-  saveTasks();
-  renderToday();
-  gasSet('sw_day_status',dayStatus);
-  renderStats();
+const task=todayTasks[key][idx];
+task.done=false;
+if(task.subj&&task.lessonNum){
+if(rounds[task.subj]&&rounds[task.subj][task.lessonNum]>0)
+rounds[task.subj][task.lessonNum]--;
+saveRounds();
+}
+saveTasks();
+renderToday();
+gasSet('sw_day_status',dayStatus);
+renderStats();
 }
 
 function saveNotes(key,idx,notes){
-  if(todayTasks[key]&&todayTasks[key][idx]){
-    todayTasks[key][idx].notes=notes;
-    saveTasks();
-  }
+if(todayTasks[key]&&todayTasks[key][idx]){
+todayTasks[key][idx].notes=notes;
+saveTasks();
+}
 }
 
 function addTask(){
-  const input=document.getElementById('add-task-input');
-  const subjSel=document.getElementById('add-task-select');
-  const text=input.value.trim();
-  if(!text) return;
-  const key=todayKey();
-  if(!todayTasks[key]) todayTasks[key]=[];
-  todayTasks[key].push({id:Date.now(),subj:subjSel.value||null,lessonNum:null,text,done:false});
-  input.value='';
-  saveTasks();
-  renderToday();
+const input=document.getElementById('add-task-input');
+const subjSel=document.getElementById('add-task-select');
+const text=input.value.trim();
+if(!text) return;
+const key=todayKey();
+if(!todayTasks[key]) todayTasks[key]=[];
+todayTasks[key].push({id:Date.now(),subj:subjSel.value||null,lessonNum:null,text,done:false});
+input.value='';
+saveTasks();
+renderToday();
 }
 
 function sendTodayReport(){
-  const key=todayKey();
-  const tasks=todayTasks[key]||[];
-  const done=tasks.filter(t=>t.done);
-  const undone=tasks.filter(t=>!t.done);
-  const now=new Date();
-  const weekdays=['日','一','二','三','四','五','六'];
-  let msg=`今日任務回報（${now.getMonth()+1}/${now.getDate()} 週${weekdays[now.getDay()]}）：\n`;
-  if(done.length) msg+=`\n✓ 已完成：\n`+done.map(t=>{
-    const s=t.subj?getSubject(t.subj):null;
-    return `  - ${s?s.name:'其他'}${t.lessonNum?' 第'+t.lessonNum+'堂':''}：${t.text||''}`;
-  }).join('\n');
-  if(undone.length) msg+=`\n✗ 未完成：\n`+undone.map(t=>{
-    const s=t.subj?getSubject(t.subj):null;
-    return `  - ${s?s.name:'其他'}${t.lessonNum?' 第'+t.lessonNum+'堂':''}：${t.text||''}`;
-  }).join('\n');
-  if(!tasks.length) msg+='\n今天是休息日，沒有安排任務。';
-  msg+='\n\n請幫我看看今天的完成情況，有需要補課或調整明天計畫的地方嗎？';
-  // Add notes summary if any
-  const withNotes=tasks.filter(t=>t.notes&&t.notes.trim());
-  if(withNotes.length){
-    msg+='\n\n📝 課堂心得：\n'+withNotes.map(t=>{
-      const s=t.subj?getSubject(t.subj):null;
-      return `  - ${s?s.name:'其他'}${t.lessonNum?' 第'+t.lessonNum+'堂':''}：${t.notes}`;
-    }).join('\n');
-  }
-  navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
+const key=todayKey();
+const tasks=todayTasks[key]||[];
+const done=tasks.filter(t=>t.done);
+const undone=tasks.filter(t=>!t.done);
+const now=new Date();
+const weekdays=['日','一','二','三','四','五','六'];
+let msg=`今日任務回報（${now.getMonth()+1}/${now.getDate()} 週${weekdays[now.getDay()]}）：\n`;
+if(done.length) msg+=`\n✓ 已完成：\n`+done.map(t=>{
+const s=t.subj?getSubject(t.subj):null;
+return ` - ${s?s.name:(t.isWebUpdate?'更新讀書網頁':'其他')}${t.lessonNum?' 第'+t.lessonNum+'堂':''}：${t.text||''}`;
+}).join('\n');
+if(undone.length) msg+=`\n✗ 未完成：\n`+undone.map(t=>{
+const s=t.subj?getSubject(t.subj):null;
+return ` - ${s?s.name:(t.isWebUpdate?'更新讀書網頁':'其他')}${t.lessonNum?' 第'+t.lessonNum+'堂':''}：${t.text||''}`;
+}).join('\n');
+if(!tasks.length) msg+='\n今天是休息日，沒有安排任務。';
+msg+='\n\n請幫我看看今天的完成情況，有需要補課或調整明天計畫的地方嗎？';
+const withNotes=tasks.filter(t=>t.notes&&t.notes.trim());
+if(withNotes.length){
+msg+='\n\n📝 課堂心得：\n'+withNotes.map(t=>{
+const s=t.subj?getSubject(t.subj):null;
+return ` - ${s?s.name:'其他'}${t.lessonNum?' 第'+t.lessonNum+'堂':''}：${t.notes}`;
+}).join('\n');
+}
+navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
 }
 
 // ── Tracker (rounds) ──
 function renderStats(){
-  const totalWatched=SUBJECTS.reduce((a,s)=>a+getLessonsWatched(s.id),0);
-  const pct=Math.round(totalWatched/TOTAL_LESSONS*100);
-  const subjDone=SUBJECTS.filter(s=>getLessonsWatched(s.id)>=s.total).length;
-  const diff=Math.max(0,Math.ceil((EXAM_DATE-new Date())/(1000*60*60*24)));
-  document.getElementById('stats-bar').innerHTML=`
-    <div class="stat-card"><div class="stat-label">已看完堂數</div><div class="stat-val">${totalWatched}<span class="stat-unit">/ ${TOTAL_LESSONS}</span></div></div>
-    <div class="stat-card"><div class="stat-label">第一輪進度</div><div class="stat-val">${pct}<span class="stat-unit">%</span></div></div>
-    <div class="stat-card"><div class="stat-label">已完課科目</div><div class="stat-val">${subjDone}<span class="stat-unit">/ 7</span></div></div>
-    <div class="stat-card"><div class="stat-label">距離考試</div><div class="stat-val">${diff}<span class="stat-unit">天</span></div></div>`;
+const totalWatched=SUBJECTS.reduce((a,s)=>a+getLessonsWatched(s.id),0);
+const pct=Math.round(totalWatched/TOTAL_LESSONS*100);
+const subjDone=SUBJECTS.filter(s=>getLessonsWatched(s.id)>=s.total).length;
+const diff=Math.max(0,Math.ceil((EXAM_DATE-new Date())/(1000*60*60*24)));
+document.getElementById('stats-bar').innerHTML=`
+<div class="stat-card"><div class="stat-label">已看完堂數</div><div class="stat-val">${totalWatched}<span class="stat-unit">/ ${TOTAL_LESSONS}</span></div></div>
+<div class="stat-card"><div class="stat-label">第一輪進度</div><div class="stat-val">${pct}<span class="stat-unit">%</span></div></div>
+<div class="stat-card"><div class="stat-label">已完課科目</div><div class="stat-val">${subjDone}<span class="stat-unit">/ 7</span></div></div>
+<div class="stat-card"><div class="stat-label">距離考試</div><div class="stat-val">${diff}<span class="stat-unit">天</span></div></div>`;
 }
 
 function renderTracker(){
-  renderStats();
-  const el=document.getElementById('tracker-container');
-  el.innerHTML='';
-  SUBJECTS.forEach(s=>{
-    const watched=getLessonsWatched(s.id);
-    const pct=Math.round(watched/s.total*100);
-    const isOpen=!!openSubjects[s.id];
-    // max rounds across all lessons for this subject
-    const maxRounds=Object.values(rounds[s.id]||{}).reduce((a,v)=>Math.max(a,v),0);
-    const roundLabel=maxRounds>0?` · 最多 ${maxRounds} 輪`:'';
-
-    const card=document.createElement('div'); card.className='subj-card';
-    card.innerHTML=`
-      <div class="subj-head" onclick="toggleSubject('${s.id}')">
-        <div class="subj-dot" style="background:${s.color};"></div>
-        <div class="subj-name">${s.name}</div>
-        <div class="subj-prog">${watched} / ${s.total} 堂${roundLabel}</div>
-        <div class="subj-pct">${pct}%</div>
-        <span class="chevron${isOpen?' open':''}">▼</span>
-      </div>
-      <div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${s.color};"></div></div>
-      ${isOpen?`<div class="lessons-wrap">
-        <div class="lessons-hint">點一下 +1 輪；長按歸零</div>
-        <div class="lessons-grid" id="grid-${s.id}"></div>
-        <div class="rounds-legend">
-          <div class="rl"><div class="rl-dot" style="background:var(--bg-3);border:1px solid var(--border-2);"></div>未看</div>
-          <div class="rl"><div class="rl-dot" style="background:${s.color};"></div>1 輪</div>
-          <div class="rl"><div class="rl-dot" style="background:${s.color};opacity:0.65;"></div>2 輪</div>
-          <div class="rl"><div class="rl-dot" style="background:${s.color};opacity:0.4;"></div>3+ 輪</div>
-        </div>
-      </div>`:''}`;
-    el.appendChild(card);
-    if(isOpen){
-      const grid=document.getElementById('grid-'+s.id);
-      for(let i=1;i<=s.total;i++){
-        const r=(rounds[s.id]&&rounds[s.id][i])||0;
-        const btn=document.createElement('button');
-        btn.className='round-btn'+(r>=1?' r'+Math.min(r,3):'');
-        if(r>=1) btn.style.cssText=`background:${s.color};opacity:${r===1?1:r===2?0.75:0.55};`;
-        btn.innerHTML=`<span class="lesson-num">${i}</span><span class="round-count">${r>0?'×'+r:''}</span>`;
-        btn.title=`第 ${i} 堂 — 點擊 +1 輪，長按歸零`;
-        btn.onclick=(e)=>{e.stopPropagation();addRound(s.id,i);};
-        btn.oncontextmenu=(e)=>{e.preventDefault();e.stopPropagation();resetRound(s.id,i);};
-        // Long press for mobile
-        let pressTimer;
-        btn.addEventListener('touchstart',()=>{pressTimer=setTimeout(()=>resetRound(s.id,i),600);});
-        btn.addEventListener('touchend',()=>clearTimeout(pressTimer));
-        grid.appendChild(btn);
-      }
-    }
-  });
+renderStats();
+const el=document.getElementById('tracker-container');
+el.innerHTML='';
+SUBJECTS.forEach(s=>{
+const watched=getLessonsWatched(s.id);
+const pct=Math.round(watched/s.total*100);
+const isOpen=!!openSubjects[s.id];
+const maxRounds=Object.values(rounds[s.id]||{}).reduce((a,v)=>Math.max(a,v),0);
+const roundLabel=maxRounds>0?` · 最多 ${maxRounds} 輪`:'';
+const card=document.createElement('div'); card.className='subj-card';
+card.innerHTML=`
+<div class="subj-head" onclick="toggleSubject('${s.id}')">
+<div class="subj-dot" style="background:${s.color};"></div>
+<div class="subj-name">${s.name}</div>
+<div class="subj-prog">${watched} / ${s.total} 堂${roundLabel}</div>
+<div class="subj-pct">${pct}%</div>
+<span class="chevron${isOpen?' open':''}">▼</span>
+</div>
+<div class="prog-track"><div class="prog-fill" style="width:${pct}%;background:${s.color};"></div></div>
+${isOpen?`<div class="lessons-wrap">
+<div class="lessons-hint">點一下 +1 輪；長按歸零</div>
+<div class="lessons-grid" id="grid-${s.id}"></div>
+<div class="rounds-legend">
+<div class="rl"><div class="rl-dot" style="background:var(--bg-3);border:1px solid var(--border-2);"></div>未看</div>
+<div class="rl"><div class="rl-dot" style="background:${s.color};"></div>1 輪</div>
+<div class="rl"><div class="rl-dot" style="background:${s.color};opacity:0.65;"></div>2 輪</div>
+<div class="rl"><div class="rl-dot" style="background:${s.color};opacity:0.4;"></div>3+ 輪</div>
+</div>
+</div>`:''}`;
+el.appendChild(card);
+if(isOpen){
+const grid=document.getElementById('grid-'+s.id);
+for(let i=1;i<=s.total;i++){
+const r=(rounds[s.id]&&rounds[s.id][i])||0;
+const btn=document.createElement('button');
+btn.className='round-btn'+(r>=1?' r'+Math.min(r,3):'');
+if(r>=1) btn.style.cssText=`background:${s.color};opacity:${r===1?1:r===2?0.75:0.55};`;
+btn.innerHTML=`<span class="lesson-num">${i}</span><span class="round-count">${r>0?'×'+r:''}</span>`;
+btn.title=`第 ${i} 堂 — 點擊 +1 輪，長按歸零`;
+btn.onclick=(e)=>{e.stopPropagation();addRound(s.id,i);};
+btn.oncontextmenu=(e)=>{e.preventDefault();e.stopPropagation();resetRound(s.id,i);};
+let pressTimer;
+btn.addEventListener('touchstart',()=>{pressTimer=setTimeout(()=>resetRound(s.id,i),600);});
+btn.addEventListener('touchend',()=>clearTimeout(pressTimer));
+grid.appendChild(btn);
+}
+}
+});
 }
 
 function toggleSubject(id){openSubjects[id]=!openSubjects[id];renderTracker();}
-
 function addRound(subjId,num){
-  if(!rounds[subjId]) rounds[subjId]={};
-  rounds[subjId][num]=(rounds[subjId][num]||0)+1;
-  saveRounds();
-  renderTracker();
+if(!rounds[subjId]) rounds[subjId]={};
+rounds[subjId][num]=(rounds[subjId][num]||0)+1;
+saveRounds();
+renderTracker();
 }
-
 function resetRound(subjId,num){
-  if(rounds[subjId]) rounds[subjId][num]=0;
-  saveRounds();
-  renderTracker();
+if(rounds[subjId]) rounds[subjId][num]=0;
+saveRounds();
+renderTracker();
 }
 
 // ── Daily ──
@@ -784,124 +752,118 @@ function getCurrentPhase(){return localStorage.getItem('sw_phase')||'abroad';}
 function setPhase(p){localStorage.setItem('sw_phase',p);renderDaily();}
 
 function renderDaily(){
-  const todayDow=new Date().getDay();
-  document.getElementById('day-tabs').innerHTML=DAYS.map((d,i)=>{
-    const dow=i===6?0:i+1;
-    const isToday=dow===todayDow;
-    return `<button class="day-tab${activeDayTab===dow?' active':''}${isToday?' today':''}" onclick="selectDay(${dow})">${d}${isToday?' · 今':''}</button>`;
-  }).join('');
-
-  const phase=getCurrentPhase();
-  const daySchedule=DAILY_SCHEDULE[phase][activeDayTab]||[];
-  const phaseLabel=phase==='abroad'?'目前模式：在國外，每天 2 小時':'目前模式：上班中，每天 1–1.5 小時，週末補強';
-
-  const oldToggle=document.getElementById('phase-toggle');
-  if(oldToggle) oldToggle.remove();
-  const toggleDiv=document.createElement('div');
-  toggleDiv.id='phase-toggle';
-  toggleDiv.style.cssText='display:flex;align-items:center;gap:8px;margin-bottom:16px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);font-size:12px;';
-  toggleDiv.innerHTML=`
-    <span style="color:var(--ink-3);margin-right:4px;">目前模式：</span>
-    <button onclick="setPhase('abroad')" style="padding:5px 14px;border-radius:20px;border:1px solid var(--border-2);font-size:12px;cursor:pointer;font-family:var(--sans);background:${phase==='abroad'?'var(--ink)':'var(--white)'};color:${phase==='abroad'?'var(--white)':'var(--ink-2)'};">在國外（2hr）</button>
-    <button onclick="setPhase('working')" style="padding:5px 14px;border-radius:20px;border:1px solid var(--border-2);font-size:12px;cursor:pointer;font-family:var(--sans);background:${phase==='working'?'var(--ink)':'var(--white)'};color:${phase==='working'?'var(--white)':'var(--ink-2)'};">上班中（1–1.5hr）</button>
-    <span style="color:var(--ink-4);font-size:11px;margin-left:4px;">（可隨時切換）</span>`;
-  document.getElementById('daily-content').before(toggleDiv);
-
-  const contentEl=document.getElementById('daily-content');
-  if(daySchedule.length===0){contentEl.innerHTML=`<div class="card"><p style="color:var(--ink-3);font-size:13px;">這天安排休息或彈性自讀。</p></div>`;return;}
-  contentEl.innerHTML=daySchedule.map(block=>{
-    const s=getSubject(block.subj);
-    const watched=getLessonsWatched(block.subj);
-    const pct=Math.round(watched/s.total*100);
-    return `<div class="schedule-block">
-      <div class="sched-head">
-        <div class="sched-dot" style="background:${s.color};"></div>
-        <div class="sched-subject">${s.name}</div>
-        <div class="sched-type" style="background:${s.color}22;color:${s.color};">${block.type}</div>
-        <div style="font-size:11px;color:var(--ink-3);margin-left:8px;">${watched}/${s.total} 堂 (${pct}%)</div>
-      </div>
-      <div class="sched-body">${block.rows.map(r=>`<div class="sched-row">${r}</div>`).join('')}</div>
-      <div class="phase-note">${phaseLabel}</div>
-    </div>`;
-  }).join('');
+const todayDow=new Date().getDay();
+document.getElementById('day-tabs').innerHTML=DAYS.map((d,i)=>{
+const dow=i===6?0:i+1;
+const isToday=dow===todayDow;
+return `<button class="day-tab${activeDayTab===dow?' active':''}${isToday?' today':''}" onclick="selectDay(${dow})">${d}${isToday?' · 今':''}</button>`;
+}).join('');
+const phase=getCurrentPhase();
+const daySchedule=DAILY_SCHEDULE[phase][activeDayTab]||[];
+const phaseLabel=phase==='abroad'?'目前模式：在國外，每天 2 小時':'目前模式：上班中，每天 1–1.5 小時，週末補強';
+const oldToggle=document.getElementById('phase-toggle');
+if(oldToggle) oldToggle.remove();
+const toggleDiv=document.createElement('div');
+toggleDiv.id='phase-toggle';
+toggleDiv.style.cssText='display:flex;align-items:center;gap:8px;margin-bottom:16px;padding:12px 16px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);font-size:12px;';
+toggleDiv.innerHTML=`
+<span style="color:var(--ink-3);margin-right:4px;">目前模式：</span>
+<button onclick="setPhase('abroad')" style="padding:5px 14px;border-radius:20px;border:1px solid var(--border-2);font-size:12px;cursor:pointer;font-family:var(--sans);background:${phase==='abroad'?'var(--ink)':'var(--white)'};color:${phase==='abroad'?'var(--white)':'var(--ink-2)'};">在國外（2hr）</button>
+<button onclick="setPhase('working')" style="padding:5px 14px;border-radius:20px;border:1px solid var(--border-2);font-size:12px;cursor:pointer;font-family:var(--sans);background:${phase==='working'?'var(--ink)':'var(--white)'};color:${phase==='working'?'var(--white)':'var(--ink-2)'};">上班中（1–1.5hr）</button>
+<span style="color:var(--ink-4);font-size:11px;margin-left:4px;">（可隨時切換）</span>`;
+document.getElementById('daily-content').before(toggleDiv);
+const contentEl=document.getElementById('daily-content');
+if(daySchedule.length===0){contentEl.innerHTML=`<div class="card"><p style="color:var(--ink-3);font-size:13px;">這天安排休息或彈性自讀。</p></div>`;return;}
+contentEl.innerHTML=daySchedule.map(block=>{
+const s=getSubject(block.subj);
+const watched=getLessonsWatched(block.subj);
+const pct=Math.round(watched/s.total*100);
+return `<div class="schedule-block">
+<div class="sched-head">
+<div class="sched-dot" style="background:${s.color};"></div>
+<div class="sched-subject">${s.name}</div>
+<div class="sched-type" style="background:${s.color}22;color:${s.color};">${block.type}</div>
+<div style="font-size:11px;color:var(--ink-3);margin-left:8px;">${watched}/${s.total} 堂 (${pct}%)</div>
+</div>
+<div class="sched-body">${block.rows.map(r=>`<div class="sched-row">${r}</div>`).join('')}</div>
+<div class="phase-note">${phaseLabel}</div>
+</div>`;
+}).join('');
 }
 
 function selectDay(dow){activeDayTab=dow;renderDaily();}
 
 // ── Calendar ──
 function renderCalendar(){
-  const monthKey=`${calYear}-${calMonth+1}`;
-  document.getElementById('cal-title').textContent=`${calYear} 年 ${MONTHS[calMonth]}`;
-  const grid=document.getElementById('cal-grid');
-  grid.innerHTML='';
-  DAYS.forEach(d=>{const h=document.createElement('div');h.className='cal-dow';h.textContent=d;grid.appendChild(h);});
-  const firstDow=new Date(calYear,calMonth,1).getDay();
-  const firstOffset=firstDow===0?6:firstDow-1;
-  const daysInMonth=new Date(calYear,calMonth+1,0).getDate();
-  const today=new Date(); const todayStr=dateKey(today);
-
-  for(let i=0;i<firstOffset;i++){const e=document.createElement('div');e.className='cal-day empty';grid.appendChild(e);}
-  for(let d=1;d<=daysInMonth;d++){
-    const dt=new Date(calYear,calMonth,d);
-    const key=dateKey(dt);
-    const status=dayStatus[key];
-    const tasks=todayTasks[key]||[];
-    const isToday=key===todayStr;
-    const isFuture=dt>today;
-    const cell=document.createElement('div');
-    cell.className='cal-day'+(isToday?' today-cell':'');
-    const numEl=document.createElement('div');
-    numEl.className='cal-day-num';numEl.textContent=d;
-    cell.appendChild(numEl);
-    if(!isFuture&&status){
-      const icon=document.createElement('span');
-      icon.className='cal-status';
-      if(status==='done'){icon.textContent='✓';icon.style.color='var(--green-text)';}
-      else if(status==='partial'){icon.textContent='◑';icon.style.color='var(--amber)';}
-      else if(status==='missed'&&tasks.length>0){icon.textContent='✗';icon.style.color='var(--red-text)';}
-      else{icon.textContent='—';icon.style.color='var(--ink-4)';}
-      cell.appendChild(icon);
-    }
-    if(tasks.length>0){
-      const dots=document.createElement('div');dots.className='cal-dots';
-      [...new Set(tasks.map(t=>t.subj).filter(Boolean))].slice(0,4).forEach(id=>{
-        const s=getSubject(id);if(!s)return;
-        const dot=document.createElement('div');dot.className='cal-dot';dot.style.background=s.color;
-        dots.appendChild(dot);
-      });
-      cell.appendChild(dots);
-    }
-    grid.appendChild(cell);
-  }
-
-  // Monthly plan below calendar
-  const planEl=document.getElementById('month-plan-content');
-  const plan=MONTHLY_PLAN[monthKey];
-  if(!plan){planEl.innerHTML=`<div style="color:var(--ink-3);font-size:13px;padding:8px 0;">這個月沒有特定讀書計畫目標。</div>`;return;}
-  planEl.innerHTML=`<div class="month-plan-block">
-    <div class="month-plan-head">
-      <div>
-        <div class="month-plan-title">${calYear} 年 ${MONTHS[calMonth]} 讀書目標</div>
-        <div class="month-plan-note">${plan.note}</div>
-      </div>
-      <span class="month-plan-badge" style="background:${plan.phaseColor};color:${plan.phaseText};margin-left:auto;">${plan.phase}</span>
-    </div>
-    <table class="month-table">
-      <thead><tr><th>科目</th><th>目標</th><th>目前進度</th><th>狀態</th></tr></thead>
-      <tbody>${plan.rows.map(r=>{
-        const s=r.subj?getSubject(r.subj):null;
-        const watched=s?getLessonsWatched(s.id):0;
-        const total=s?s.total:0;
-        const pct=s?Math.round(watched/total*100):0;
-        return `<tr>
-          <td>${s?`<div class="subject-pill"><div class="pill-dot" style="background:${s.color};"></div>${s.name}</div>`:'<span style="color:var(--ink-3);">—</span>'}</td>
-          <td>${r.target}</td>
-          <td>${s?`<div style="display:flex;align-items:center;gap:8px;"><div style="flex:1;height:4px;background:var(--bg-3);border-radius:2px;"><div style="width:${pct}%;height:100%;border-radius:2px;background:${s.color};"></div></div><span style="font-size:11px;color:var(--ink-3);min-width:30px;">${pct}%</span></div>`:'—'}</td>
-          <td class="${r.status==='done'?'target-done':r.status==='ongoing'?'target-ongoing':''}" style="${r.status==='special'?'color:var(--amber-text);':''}">${r.statusText}</td>
-        </tr>`;
-      }).join('')}</tbody>
-    </table>
-  </div>`;
+const monthKey=`${calYear}-${calMonth+1}`;
+document.getElementById('cal-title').textContent=`${calYear} 年 ${MONTHS[calMonth]}`;
+const grid=document.getElementById('cal-grid');
+grid.innerHTML='';
+DAYS.forEach(d=>{const h=document.createElement('div');h.className='cal-dow';h.textContent=d;grid.appendChild(h);});
+const firstDow=new Date(calYear,calMonth,1).getDay();
+const firstOffset=firstDow===0?6:firstDow-1;
+const daysInMonth=new Date(calYear,calMonth+1,0).getDate();
+const today=new Date(); const todayStr=dateKey(today);
+for(let i=0;i<firstOffset;i++){const e=document.createElement('div');e.className='cal-day empty';grid.appendChild(e);}
+for(let d=1;d<=daysInMonth;d++){
+const dt=new Date(calYear,calMonth,d);
+const key=dateKey(dt);
+const status=dayStatus[key];
+const tasks=todayTasks[key]||[];
+const isToday=key===todayStr;
+const isFuture=dt>today;
+const cell=document.createElement('div');
+cell.className='cal-day'+(isToday?' today-cell':'');
+const numEl=document.createElement('div');
+numEl.className='cal-day-num';numEl.textContent=d;
+cell.appendChild(numEl);
+if(!isFuture&&status){
+const icon=document.createElement('span');
+icon.className='cal-status';
+if(status==='done'){icon.textContent='✓';icon.style.color='var(--green-text)';}
+else if(status==='partial'){icon.textContent='◑';icon.style.color='var(--amber)';}
+else if(status==='missed'&&tasks.length>0){icon.textContent='✗';icon.style.color='var(--red-text)';}
+else{icon.textContent='—';icon.style.color='var(--ink-4)';}
+cell.appendChild(icon);
+}
+if(tasks.length>0){
+const dots=document.createElement('div');dots.className='cal-dots';
+[...new Set(tasks.map(t=>t.subj).filter(Boolean))].slice(0,4).forEach(id=>{
+const s=getSubject(id);if(!s)return;
+const dot=document.createElement('div');dot.className='cal-dot';dot.style.background=s.color;
+dots.appendChild(dot);
+});
+cell.appendChild(dots);
+}
+grid.appendChild(cell);
+}
+const planEl=document.getElementById('month-plan-content');
+const plan=MONTHLY_PLAN[monthKey];
+if(!plan){planEl.innerHTML=`<div style="color:var(--ink-3);font-size:13px;padding:8px 0;">這個月沒有特定讀書計畫目標。</div>`;return;}
+planEl.innerHTML=`<div class="month-plan-block">
+<div class="month-plan-head">
+<div>
+<div class="month-plan-title">${calYear} 年 ${MONTHS[calMonth]} 讀書目標</div>
+<div class="month-plan-note">${plan.note}</div>
+</div>
+<span class="month-plan-badge" style="background:${plan.phaseColor};color:${plan.phaseText};margin-left:auto;">${plan.phase}</span>
+</div>
+<table class="month-table">
+<thead><tr><th>科目</th><th>目標</th><th>目前進度</th><th>狀態</th></tr></thead>
+<tbody>${plan.rows.map(r=>{
+const s=r.subj?getSubject(r.subj):null;
+const watched=s?getLessonsWatched(s.id):0;
+const total=s?s.total:0;
+const pct=s?Math.round(watched/total*100):0;
+return `<tr>
+<td>${s?`<div class="subject-pill"><div class="pill-dot" style="background:${s.color};"></div>${s.name}</div>`:'<span style="color:var(--ink-3);">—</span>'}</td>
+<td>${r.target}</td>
+<td>${s?`<div style="display:flex;align-items:center;gap:8px;"><div style="flex:1;height:4px;background:var(--bg-3);border-radius:2px;"><div style="width:${pct}%;height:100%;border-radius:2px;background:${s.color};"></div></div><span style="font-size:11px;color:var(--ink-3);min-width:30px;">${pct}%</span></div>`:'—'}</td>
+<td class="${r.status==='done'?'target-done':r.status==='ongoing'?'target-ongoing':''}" style="${r.status==='special'?'color:var(--amber-text);':''}">${r.statusText}</td>
+</tr>`;
+}).join('')}</tbody>
+</table>
+</div>`;
 }
 
 function prevMonth(){calMonth--;if(calMonth<0){calMonth=11;calYear--;}renderCalendar();}
@@ -909,39 +871,39 @@ function nextMonth(){calMonth++;if(calMonth>11){calMonth=0;calYear++;}renderCale
 
 // ── Plan ──
 function renderPlan(){
-  document.getElementById('phase-grid').innerHTML=PHASE_DATA.map(p=>`
-    <div class="phase-card">
-      <div class="phase-num">${p.num}</div>
-      <div class="phase-name">${p.name}</div>
-      <div class="phase-date">${p.date}</div>
-      <span class="phase-badge" style="background:${p.badgeColor};color:${p.badgeText};">${p.badge}</span>
-      <ul class="phase-list">${p.items.map(i=>`<li>${i}</li>`).join('')}</ul>
-    </div>`).join('');
+document.getElementById('phase-grid').innerHTML=PHASE_DATA.map(p=>`
+<div class="phase-card">
+<div class="phase-num">${p.num}</div>
+<div class="phase-name">${p.name}</div>
+<div class="phase-date">${p.date}</div>
+<span class="phase-badge" style="background:${p.badgeColor};color:${p.badgeText};">${p.badge}</span>
+<ul class="phase-list">${p.items.map(i=>`<li>${i}</li>`).join('')}</ul>
+</div>`).join('');
 }
 
 // ── Reports ──
 function sendWeeklyReport(){
-  const lines=SUBJECTS.map(s=>{
-    const watched=getLessonsWatched(s.id);
-    const maxR=Object.values(rounds[s.id]||{}).reduce((a,v)=>Math.max(a,v),0);
-    return `${s.name}：${watched}/${s.total} 堂（最多 ${maxR} 輪）`;
-  });
-  const totalWatched=SUBJECTS.reduce((a,s)=>a+getLessonsWatched(s.id),0);
-  const msg=`本週讀書進度回報：\n${lines.join('\n')}\n\n整體：${totalWatched}/${TOTAL_LESSONS} 堂（${Math.round(totalWatched/TOTAL_LESSONS*100)}%）\n請幫我看看進度是否跟上計畫，有需要調整嗎？`;
-  navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
+const lines=SUBJECTS.map(s=>{
+const watched=getLessonsWatched(s.id);
+const maxR=Object.values(rounds[s.id]||{}).reduce((a,v)=>Math.max(a,v),0);
+return `${s.name}：${watched}/${s.total} 堂（最多 ${maxR} 輪）`;
+});
+const totalWatched=SUBJECTS.reduce((a,s)=>a+getLessonsWatched(s.id),0);
+const msg=`本週讀書進度回報：\n${lines.join('\n')}\n\n整體：${totalWatched}/${TOTAL_LESSONS} 堂（${Math.round(totalWatched/TOTAL_LESSONS*100)}%）\n請幫我看看進度是否跟上計畫，有需要調整嗎？`;
+navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
 }
 
 // ── Sidebar ──
 function renderSidebarSubjects(){
-  document.getElementById('sb-subjects').innerHTML=SUBJECTS.map(s=>`
-    <div style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:11px;color:var(--ink-2);">
-      <div style="width:7px;height:7px;border-radius:2px;background:${s.color};flex-shrink:0;"></div>${s.name}
-    </div>`).join('');
+document.getElementById('sb-subjects').innerHTML=SUBJECTS.map(s=>`
+<div style="display:flex;align-items:center;gap:8px;padding:5px 0;font-size:11px;color:var(--ink-2);">
+<div style="width:7px;height:7px;border-radius:2px;background:${s.color};flex-shrink:0;"></div>${s.name}
+</div>`).join('');
 }
 
 function populateSubjectSelect(){
-  const sel=document.getElementById('add-task-subj');
-  SUBJECTS.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.name;sel.appendChild(o);});
+const sel=document.getElementById('add-task-subj');
+SUBJECTS.forEach(s=>{const o=document.createElement('option');o.value=s.id;o.textContent=s.name;sel.appendChild(o);});
 }
 
 // ── Init ──
@@ -949,7 +911,7 @@ renderSidebarSubjects();
 populateSubjectSelect();
 renderPlan();
 renderDaily();
-loadState(); // async — will re-render today/tracker/calendar after load
+loadState();
 </script>
 </body>
 </html>

@@ -379,9 +379,11 @@ let calYear=new Date().getFullYear();
 let calMonth=new Date().getMonth();
 
 function dateKey(d){
-  const y=d.getFullYear();
-  const m=String(d.getMonth()+1).padStart(2,'0');
-  const day=String(d.getDate()).padStart(2,'0');
+  // Day changes at 5am, not midnight
+  const adjusted=new Date(d.getTime()-5*60*60*1000);
+  const y=adjusted.getFullYear();
+  const m=String(adjusted.getMonth()+1).padStart(2,'0');
+  const day=String(adjusted.getDate()).padStart(2,'0');
   return `${y}-${m}-${day}`;
 }
 function todayKey(){return dateKey(new Date());}

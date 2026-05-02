@@ -549,8 +549,8 @@ function renderToday(){
   let subtitleLines=[];
   if(isLateNight){
     subtitleLines.push('🌙 深夜中，沿用昨日任務');
-    if(allDone) subtitleLines.push('昨天任務已全部完成 ✓');
-    else subtitleLines.push('昨天任務尚未完成');
+    if(allDone) subtitleLines.push('✅ 昨天任務已全部完成');
+    else subtitleLines.push('❌ 昨天任務尚未完成');
   } else {
     subtitleLines.push(total===0?'今天沒有預設任務，可以自己加入↓':`共 ${total} 個任務，已完成 ${done} 個`);
   }
@@ -574,20 +574,26 @@ function renderToday(){
       const roundLabel=currentRound>0?` （第 ${currentRound} 輪）`:'';
       const desc=t.lessonNum?`第 ${t.lessonNum} 堂${roundLabel}`:(t.text||'');
       const notes=t.notes||'';
-      return `<div class="task-item${t.done?' done-task':''}">
+      const locked=t.done;
+      return `<div class="task-item${locked?' done-task':''}">
         <div class="task-color-bar" style="background:${color};"></div>
-        <div class="task-check${t.done?' checked':''}" style="${t.done?`background:${color};`:''}" onclick="toggleTask('${key}',${i})">
-          ${t.done?'<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}
+        <div class="task-check${locked?' checked':''}" style="${locked?`background:${color};pointer-events:none;`:''}" onclick="${locked?'':'toggleTask(\''+key+'\','+i+')'}">
+          ${locked?'<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}
         </div>
         <div class="task-body">
-          <div class="task-subject" style="${t.done?'text-decoration:line-through;color:var(--ink-3);':''}">${s?s.name:'其他'}</div>
+          <div class="task-subject" style="${locked?'text-decoration:line-through;color:var(--ink-3);':''}">${s?s.name:'其他'}</div>
           <div class="task-desc">${desc}</div>
           <input type="text" placeholder="這堂心得（選填）…" value="${notes.replace(/"/g,'&quot;')}"
             onchange="saveNotes('${key}',${i},this.value)"
             style="margin-top:6px;width:100%;font-size:11px;padding:5px 8px;border:1px solid var(--border-2);border-radius:6px;font-family:var(--sans);background:var(--bg-2);color:var(--ink-2);outline:none;"
             onclick="event.stopPropagation()" />
         </div>
-        <button onclick="removeTask('${key}',${i})" style="border:none;background:transparent;color:var(--ink-4);cursor:pointer;font-size:16px;padding:4px 8px;line-height:1;">×</button>
+        <div style="display:flex;flex-direction:column;gap:4px;align-items:center;">
+          ${locked
+            ? `<button onclick="undoTask('${key}',${i})" title="撤回" style="border:none;background:var(--bg-2);color:var(--ink-3);cursor:pointer;font-size:11px;padding:4px 8px;border-radius:var(--radius);font-family:var(--sans);">↩ 撤回</button>`
+            : `<button onclick="removeTask('${key}',${i})" style="border:none;background:transparent;color:var(--ink-4);cursor:pointer;font-size:16px;padding:4px 8px;line-height:1;">×</button>`
+          }
+        </div>
       </div>`;
     }).join('');
   }
@@ -625,6 +631,21 @@ function removeTask(key,idx){
   todayTasks[key].splice(idx,1);
   saveTasks();
   renderToday();
+}
+
+function undoTask(key,idx){
+  const task=todayTasks[key][idx];
+  task.done=false;
+  // undo round increment
+  if(task.subj&&task.lessonNum){
+    if(rounds[task.subj]&&rounds[task.subj][task.lessonNum]>0)
+      rounds[task.subj][task.lessonNum]--;
+    saveRounds();
+  }
+  saveTasks();
+  renderToday();
+  gasSet('sw_day_status',dayStatus);
+  renderStats();
 }
 
 function saveNotes(key,idx,notes){

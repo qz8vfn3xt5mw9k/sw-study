@@ -191,6 +191,9 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 
 <!-- 今日任務 -->
 <div id="section-today" class="section active">
+  <div id="upload-reminder" style="display:none;background:var(--amber-bg);border:1px solid #fcd34d;border-radius:var(--radius);padding:10px 16px;margin-bottom:16px;font-size:12px;color:var(--amber-text);">
+    📤 今天是定期更新日（週三／週日）！回報進度給 Claude，取得新版網頁後上傳到 GitHub。
+  </div>
   <div class="today-header">
     <div>
       <div class="page-title" id="today-title"></div>
@@ -515,8 +518,19 @@ function renderToday(){
   const now=new Date();
   const key=todayKey();
   const weekdays=['日','一','二','三','四','五','六'];
+  const dow=now.getDay();
   document.getElementById('today-title').textContent=
-    `${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日（週${weekdays[now.getDay()]}）`;
+    `${now.getFullYear()} 年 ${now.getMonth()+1} 月 ${now.getDate()} 日（週${weekdays[dow]}）`;
+
+  // Show upload reminder on Wed (3) and Sun (0)
+  const reminderEl=document.getElementById('upload-reminder');
+  if(reminderEl){
+    if(dow===3||dow===0){
+      reminderEl.style.display='block';
+    } else {
+      reminderEl.style.display='none';
+    }
+  }
 
   const tasks=getTodayTasks();
   const total=tasks.length;
@@ -544,14 +558,19 @@ function renderToday(){
       const currentRound=t.subj&&t.lessonNum?(rounds[t.subj]&&rounds[t.subj][t.lessonNum])||0:0;
       const roundLabel=currentRound>0?` （第 ${currentRound} 輪）`:'';
       const desc=t.lessonNum?`第 ${t.lessonNum} 堂${roundLabel}`:(t.text||'');
+      const notes=t.notes||'';
       return `<div class="task-item${t.done?' done-task':''}">
         <div class="task-color-bar" style="background:${color};"></div>
         <div class="task-check${t.done?' checked':''}" style="${t.done?`background:${color};`:''}" onclick="toggleTask('${key}',${i})">
-          ${t.done?`<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`:''}
+          ${t.done?'<svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>':''}
         </div>
         <div class="task-body">
           <div class="task-subject" style="${t.done?'text-decoration:line-through;color:var(--ink-3);':''}">${s?s.name:'其他'}</div>
           <div class="task-desc">${desc}</div>
+          <input type="text" placeholder="這堂心得（選填）…" value="${notes.replace(/"/g,'&quot;')}"
+            onchange="saveNotes('${key}',${i},this.value)"
+            style="margin-top:6px;width:100%;font-size:11px;padding:5px 8px;border:1px solid var(--border-2);border-radius:6px;font-family:var(--sans);background:var(--bg-2);color:var(--ink-2);outline:none;"
+            onclick="event.stopPropagation()" />
         </div>
         <button onclick="removeTask('${key}',${i})" style="border:none;background:transparent;color:var(--ink-4);cursor:pointer;font-size:16px;padding:4px 8px;line-height:1;">×</button>
       </div>`;
@@ -593,6 +612,13 @@ function removeTask(key,idx){
   renderToday();
 }
 
+function saveNotes(key,idx,notes){
+  if(todayTasks[key]&&todayTasks[key][idx]){
+    todayTasks[key][idx].notes=notes;
+    saveTasks();
+  }
+}
+
 function addTask(){
   const input=document.getElementById('add-task-input');
   const subjSel=document.getElementById('add-task-select');
@@ -624,6 +650,14 @@ function sendTodayReport(){
   }).join('\n');
   if(!tasks.length) msg+='\n今天是休息日，沒有安排任務。';
   msg+='\n\n請幫我看看今天的完成情況，有需要補課或調整明天計畫的地方嗎？';
+  // Add notes summary if any
+  const withNotes=tasks.filter(t=>t.notes&&t.notes.trim());
+  if(withNotes.length){
+    msg+='\n\n📝 課堂心得：\n'+withNotes.map(t=>{
+      const s=t.subj?getSubject(t.subj):null;
+      return `  - ${s?s.name:'其他'}${t.lessonNum?' 第'+t.lessonNum+'堂':''}：${t.notes}`;
+    }).join('\n');
+  }
   navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
 }
 

@@ -176,7 +176,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 <!-- 今日任務 -->
 <div id="section-today" class="section active">
 <div id="upload-reminder" style="display:none;background:var(--amber-bg);border:1px solid #fcd34d;border-radius:var(--radius);padding:10px 16px;margin-bottom:16px;font-size:12px;color:var(--amber-text);">
-  📤 今天是定期更新日（週三／週日）！回報進度給 Claude，取得新版網頁後上傳到 GitHub。
+  📤 今天是週六更新日！請按下方「本週彙整回報」，複製後貼給 Claude，取得新版網頁後上傳到 GitHub。
 </div>
 <div class="today-header">
 <div>
@@ -205,7 +205,7 @@ body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:14p
 <div id="tracker-container"></div>
 <button class="report-btn" onclick="sendWeeklyReport()">
 <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L13 7L7 13M1 7H13" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-回報本週進度給 Claude
+回報本週彙整給 Claude
 </button>
 </div>
 
@@ -478,7 +478,7 @@ tasks.push({id:id++,subj:subjId,lessonNum:Math.min(lessonNum,s?s.total:lessonNum
 // 使用與 dateKey 相同的 5am 換日邏輯，確保深夜不誤判
 const taskDate=new Date(new Date().getTime()-5*60*60*1000);
 const taskDow=taskDate.getDay();
-if(taskDow===3||taskDow===0){
+if(taskDow===6){
 tasks.push({id:id++,subj:null,lessonNum:null,text:'📤 更新讀書網頁',done:false,isWebUpdate:true});
 }
 
@@ -513,7 +513,7 @@ const taskDate=new Date(now.getTime()-5*60*60*1000);
 const taskDow=taskDate.getDay();
 const reminderEl=document.getElementById('upload-reminder');
 if(reminderEl){
-if(taskDow===3||taskDow===0){reminderEl.style.display='block';}
+if(taskDow===6){reminderEl.style.display='block';}
 else{reminderEl.style.display='none';}
 }
 
@@ -883,13 +883,47 @@ document.getElementById('phase-grid').innerHTML=PHASE_DATA.map(p=>`
 
 // ── Reports ──
 function sendWeeklyReport(){
-const lines=SUBJECTS.map(s=>{
+const now=new Date();
+const weekdays=['日','一','二','三','四','五','六'];
+// 取最近 7 天
+const days=[];
+for(let i=6;i>=0;i--){
+const d=new Date(now);
+d.setDate(d.getDate()-i);
+days.push(d);
+}
+let msg=`本週彙整回報（${days[0].getMonth()+1}/${days[0].getDate()} — ${days[6].getMonth()+1}/${days[6].getDate()}）\n`;
+msg+=`${'─'.repeat(36)}\n`;
+days.forEach(d=>{
+const key=dateKey(d);
+const tasks=todayTasks[key]||[];
+const done=tasks.filter(t=>t.done);
+const undone=tasks.filter(t=>!t.done);
+const label=`${d.getMonth()+1}/${d.getDate()}（週${weekdays[d.getDay()]}）`;
+if(tasks.length===0){
+msg+=`${label}：無任務\n`;
+} else {
+const doneList=done.map(t=>{
+const s=t.subj?getSubject(t.subj):null;
+return s?`${s.name}第${t.lessonNum}堂`:(t.text||'其他');
+}).join('、')||'—';
+const undoneList=undone.map(t=>{
+const s=t.subj?getSubject(t.subj):null;
+return s?`${s.name}第${t.lessonNum}堂`:(t.text||'其他');
+}).join('、')||'—';
+msg+=`${label}\n  ✓ ${doneList}\n  ✗ ${undoneList}\n`;
+}
+});
+msg+=`${'─'.repeat(36)}\n`;
+// 各科累積進度
+msg+=`\n各科累積進度：\n`;
+SUBJECTS.forEach(s=>{
 const watched=getLessonsWatched(s.id);
-const maxR=Object.values(rounds[s.id]||{}).reduce((a,v)=>Math.max(a,v),0);
-return `${s.name}：${watched}/${s.total} 堂（最多 ${maxR} 輪）`;
+msg+=`${s.name}：${watched}/${s.total} 堂\n`;
 });
 const totalWatched=SUBJECTS.reduce((a,s)=>a+getLessonsWatched(s.id),0);
-const msg=`本週讀書進度回報：\n${lines.join('\n')}\n\n整體：${totalWatched}/${TOTAL_LESSONS} 堂（${Math.round(totalWatched/TOTAL_LESSONS*100)}%）\n請幫我看看進度是否跟上計畫，有需要調整嗎？`;
+msg+=`\n整體：${totalWatched}/${TOTAL_LESSONS} 堂（${Math.round(totalWatched/TOTAL_LESSONS*100)}%）\n`;
+msg+=`\n請幫我分析這週進度、哪些科目需要加強，以及有沒有需要調整的地方。`;
 navigator.clipboard.writeText(msg).then(()=>alert('已複製！請貼到 Claude 對話框送出。'));
 }
 
